@@ -27,6 +27,7 @@ const I18N = {
         'nav.nosotros': 'Nosotros',
         'nav.soluciones': 'Soluciones',
         'nav.portafolio': 'Portafolio',
+        'nav.ambitos': 'Ámbitos',
         'nav.capacitacion': 'Capacitación',
         'nav.contacto': 'Contacto',
 
@@ -288,6 +289,7 @@ const I18N = {
         'nav.nosotros': 'About',
         'nav.soluciones': 'Solutions',
         'nav.portafolio': 'Portfolio',
+        'nav.ambitos': 'Sectors',
         'nav.capacitacion': 'Training',
         'nav.contacto': 'Contact',
 
