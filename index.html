@@ -84,6 +84,10 @@
             <symbol id="i-arrow" viewBox="0 0 24 24">
                 <path d="M5 12h14M13 6l6 6-6 6" />
             </symbol>
+            <symbol id="i-wa" viewBox="0 0 24 24">
+                <path
+                    d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.3c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.3 8.3 0 1 1 7.2 3.9z" />
+            </symbol>
         </defs>
     </svg>
 
@@ -955,7 +959,7 @@
                             <div class="col-half">
                                 <label for="f-email" data-i18n="form.email">Email</label>
                                 <input type="email" id="f-email" name="email" class="form-control"
-                                    data-i18n-placeholder="form.emailPh" placeholder="nombre@empresa.com" required
+                                    data-i18n-placeholder="form.emailPh" placeholder="nombre@empresa.com"
                                     autocomplete="email">
                             </div>
                             <div class="col-half">
@@ -1001,9 +1005,11 @@
                         <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off"
                             aria-hidden="true">
 
-                        <button type="submit" class="btn-primary w-100 mt-2" id="submitBtn">
-                            <span class="btn-label" data-i18n="form.submit">Enviar consulta</span>
-                            <span class="btn-spinner" aria-hidden="true"></span>
+                        <button type="submit" class="btn-whatsapp w-100 mt-2" id="submitBtn">
+                            <svg class="icon-brand" aria-hidden="true">
+                                <use href="#i-wa" />
+                            </svg>
+                            <span class="btn-label" data-i18n="form.submit">Enviar por WhatsApp</span>
                         </button>
 
                         <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
@@ -1034,9 +1040,8 @@
     <!-- WhatsApp -->
     <a href="https://wa.me/5492323485301" class="whatsapp-float" id="waFloat" target="_blank" rel="noopener"
         data-i18n-aria-label="a11y.whatsapp" aria-label="Escribinos por WhatsApp">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path
-                d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.3c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.3 8.3 0 1 1 7.2 3.9z" />
+        <svg aria-hidden="true" focusable="false">
+            <use href="#i-wa" />
         </svg>
     </a>
 

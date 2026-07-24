@@ -17,6 +17,11 @@
     --accent-orange-soft: rgba(242, 92, 5, 0.12);
     --accent-orange-line: rgba(242, 92, 5, 0.32);
 
+    /* Verde de WhatsApp, para lo que lleva a ese canal */
+    --wa-green: #25D366;
+    --wa-green-hover: #3BE07A;
+    --wa-ink: #0A2A17;
+
     /* El oliva oscuro sirve para fondos y bordes; sobre fondo oscuro
        el texto necesita la variante clara para pasar contraste AA. */
     --accent-olive: #4A5D23;
@@ -211,7 +216,8 @@ h4 {
 /* ---------- Botones ---------- */
 .btn-primary,
 .btn-secondary,
-.btn-primary-outline {
+.btn-primary-outline,
+.btn-whatsapp {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -288,25 +294,34 @@ h4 {
     font-size: 0.9rem;
 }
 
-/* Spinner del botón de envío */
-.btn-spinner {
-    display: none;
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(22, 24, 30, 0.35);
-    border-top-color: var(--text-on-accent);
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
+/* El envío del formulario abre WhatsApp, así que el botón usa el verde
+   de la marca en vez del naranja: anticipa a dónde lleva el clic. */
+.btn-whatsapp {
+    padding: var(--sp-4) var(--sp-6);
+    background-color: var(--wa-green);
+    color: var(--wa-ink);
+    border: 1px solid var(--wa-green);
+    font-size: 1rem;
 }
 
-.btn-primary.is-loading .btn-spinner {
-    display: inline-block;
+.btn-whatsapp:hover {
+    background-color: var(--wa-green-hover);
+    border-color: var(--wa-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37, 211, 102, 0.26);
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+.btn-whatsapp:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.icon-brand {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    stroke: none;
+    flex-shrink: 0;
 }
 
 .badge {
@@ -1624,8 +1639,8 @@ textarea.form-control {
     right: var(--sp-6);
     width: 56px;
     height: 56px;
-    background-color: #25D366;
-    color: #0A0B0E;
+    background-color: var(--wa-green);
+    color: var(--wa-ink);
     border-radius: 50%;
     display: flex;
     align-items: center;

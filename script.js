@@ -1,9 +1,8 @@
-/* Destino del formulario de contacto.
-   FormSubmit reenvía la consulta a esta casilla. La primera vez que alguien
-   envía el formulario, FormSubmit manda un mail de activación a esta dirección:
-   hay que abrirlo y hacer clic una sola vez para habilitar el envío. */
-const CONTACT_EMAIL = 'bairestacsrl@gmail.com';
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + CONTACT_EMAIL;
+/* Destino del formulario de contacto: el número de WhatsApp de BairesTac.
+   Va sin "+", espacios ni guiones, que es como lo espera wa.me.
+   Si cambia el número hay que actualizarlo también en los dos enlaces
+   de index.html (la sección Contacto y el botón flotante). */
+const WHATSAPP_NUMBER = '5492323485301';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -107,84 +106,82 @@ document.addEventListener('DOMContentLoaded', () => {
         sections.forEach(s => spy.observe(s));
     }
 
-    /* ---------- Formulario de contacto ---------- */
+    /* ---------- Formulario de contacto ----------
+       No hay servidor detrás de esta página, así que el formulario no
+       "envía" nada por sí solo: arma el mensaje con lo que cargó el
+       visitante y abre WhatsApp con el texto ya escrito. El visitante
+       da el último toque de enviar desde su propia cuenta. */
     const form = document.getElementById('contactForm');
     const statusEl = document.getElementById('formStatus');
-    const submitBtn = document.getElementById('submitBtn');
 
     const showStatus = (messageKey, state) => {
         statusEl.textContent = t(messageKey);
         statusEl.className = 'form-status is-' + state;
     };
 
-    const setLoading = (isLoading) => {
-        submitBtn.disabled = isLoading;
-        submitBtn.classList.toggle('is-loading', isLoading);
-        submitBtn.querySelector('.btn-label').textContent = t(isLoading ? 'form.sending' : 'form.submit');
+    /* Arma el mensaje en el idioma en que el visitante está viendo la página.
+       Las líneas opcionales se omiten si el campo quedó vacío. */
+    const buildMessage = (data) => {
+        const lines = [t('form.waIntro'), ''];
+
+        lines.push(t('form.name') + ': ' + data.nombre);
+        if (data.empresa) lines.push(t('form.company') + ': ' + data.empresa);
+        if (data.email) lines.push(t('form.email') + ': ' + data.email);
+        if (data.telefono) lines.push(t('form.phone') + ': ' + data.telefono);
+        lines.push(t('form.country') + ': ' + data.pais);
+        lines.push(t('form.interest') + ': ' + data.interes);
+        lines.push('', t('form.message') + ':', data.mensaje);
+
+        return lines.join('\n');
     };
 
-    form.addEventListener('submit', async (event) => {
+    form.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const nombre = form.elements['Nombre'].value.trim();
-        const email = form.elements['email'].value.trim();
-        const mensaje = form.elements['Mensaje'].value.trim();
+        const data = {
+            nombre: form.elements['Nombre'].value.trim(),
+            empresa: form.elements['Empresa'].value.trim(),
+            email: form.elements['email'].value.trim(),
+            telefono: form.elements['Teléfono'].value.trim(),
+            pais: form.elements['País'].value,
+            interes: form.elements['Interés'].value,
+            mensaje: form.elements['Mensaje'].value.trim()
+        };
 
-        if (!nombre || !email || !mensaje) {
+        if (!data.nombre || !data.mensaje) {
             showStatus('form.errRequired', 'error');
-            (!nombre ? form.elements['Nombre'] : !email ? form.elements['email'] : form.elements['Mensaje']).focus();
+            (data.nombre ? form.elements['Mensaje'] : form.elements['Nombre']).focus();
             return;
         }
 
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        // El email es opcional, pero si lo cargaron conviene que sea usable.
+        if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email)) {
             showStatus('form.errEmail', 'error');
             form.elements['email'].focus();
             return;
         }
 
-        // El honeypot solo lo completa un bot: si trae texto, fingimos éxito y no enviamos.
-        if (form.elements['_honey'].value) {
-            showStatus('form.success', 'success');
+        // El honeypot solo lo completa un bot: no abrimos nada.
+        if (form.elements['_honey'].value) return;
+
+        const url = 'https://wa.me/' + WHATSAPP_NUMBER +
+            '?text=' + encodeURIComponent(buildMessage(data));
+
+        // Se abre dentro del click del usuario, así que el navegador no
+        // debería bloquearlo. Si igual lo bloquea, dejamos el enlace a mano.
+        const ventana = window.open(url, '_blank', 'noopener');
+
+        if (ventana) {
+            showStatus('form.waOpened', 'success');
             form.reset();
-            return;
-        }
-
-        setLoading(true);
-        statusEl.textContent = '';
-        statusEl.className = 'form-status';
-
-        const payload = {
-            Nombre: nombre,
-            Empresa: form.elements['Empresa'].value.trim(),
-            email: email,
-            'Teléfono': form.elements['Teléfono'].value.trim(),
-            'País': form.elements['País'].value,
-            'Interés': form.elements['Interés'].value,
-            Mensaje: mensaje,
-            _subject: 'Nueva consulta desde bairestac.com — ' + nombre,
-            _template: 'table',
-            _captcha: 'false'
-        };
-
-        try {
-            const response = await fetch(FORM_ENDPOINT, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
-
-            if (!response.ok) throw new Error('HTTP ' + response.status);
-
-            showStatus('form.success', 'success');
-            form.reset();
-        } catch (error) {
-            console.error('Error al enviar el formulario:', error);
-            showStatus('form.errSend', 'error');
-        } finally {
-            setLoading(false);
+        } else {
+            showStatus('form.waBlocked', 'error');
+            const enlace = document.createElement('a');
+            enlace.href = url;
+            enlace.target = '_blank';
+            enlace.rel = 'noopener';
+            enlace.textContent = t('form.waOpenHere');
+            statusEl.append(' ', enlace);
         }
     });
 });
