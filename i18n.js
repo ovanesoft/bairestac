@@ -20,7 +20,6 @@ const I18N = {
         'a11y.langGroup': 'Seleccionar idioma',
         'a11y.menu': 'Abrir menú de navegación',
         'a11y.specsTabs': 'Especificaciones técnicas por producto',
-        'a11y.rating': '5 de 5',
         'a11y.whatsapp': 'Escribinos por WhatsApp',
 
         'nav.inicio': 'Inicio',
@@ -193,17 +192,6 @@ const I18N = {
         'stories.c4Res': '100% de sobrevida en sitio y hospital, mejora de 4 puntos en scores de resiliencia.',
         'stories.c4Loc': 'Uruguay — 2024',
 
-        'testimonials.title': 'Testimonios de profesionales',
-        'testimonials.lead': 'Expertos en medicina táctica y trauma comparten su experiencia.',
-        'testimonials.t1': '"El HemaShock™ cambió nuestro protocolo de shock hemorrágico. La estabilización hemodinámica es inmediata. Hemos reducido nuestra mortalidad pre-quirúrgica un 35% en 18 meses."',
-        'testimonials.t1Role': 'Jefe de Traumatología, Hospital Nacional',
-        'testimonials.t2': '"Trabajamos con la línea NAR desde hace 5 años. La confiabilidad es impecable. Nuestros operadores están capacitados al 100% y responden con seguridad bajo presión extrema."',
-        'testimonials.t2Role': 'Fuerzas Especiales, Región Sur',
-        'testimonials.t3': '"Los cursos de BairesTac son excelentes. Formadores certificados, contenido actualizado, y énfasis en la aplicabilidad real. Nuestro equipo se siente preparado."',
-        'testimonials.t3Role': 'Jefa de Paramédicos, Cuerpo de Bomberos',
-        'testimonials.t4': '"HemaClear® en nuestro quirófano es estándar. La velocidad de establecimiento del campo exsangüe es inigualable. Cero complicaciones en más de 500 procedimientos."',
-        'testimonials.t4Role': 'Cirujana Ortopédica, Centro Quirúrgico Privado',
-
         'certs.title': 'Certificaciones y validaciones <span class="text-orange">internacionales</span>',
         'certs.lead': 'Nuestros productos cumplen los más altos estándares de seguridad y eficacia globales.',
         'certs.c1': 'Aprobación de dispositivo médico de la Administración de Drogas y Alimentos de EE.UU. Conformidad con estándares de seguridad precomercialización.',
@@ -278,7 +266,6 @@ const I18N = {
         'a11y.langGroup': 'Select language',
         'a11y.menu': 'Open navigation menu',
         'a11y.specsTabs': 'Technical specifications by product',
-        'a11y.rating': '5 out of 5',
         'a11y.whatsapp': 'Message us on WhatsApp',
 
         'nav.inicio': 'Home',
@@ -450,17 +437,6 @@ const I18N = {
         'stories.c4App': 'NAR kits with haemostatic dressings and the MARCH algorithm.',
         'stories.c4Res': '100% survival on scene and in hospital, 4-point improvement in resilience scores.',
         'stories.c4Loc': 'Uruguay — 2024',
-
-        'testimonials.title': 'What professionals say',
-        'testimonials.lead': 'Experts in tactical medicine and trauma share their experience.',
-        'testimonials.t1': '"HemaShock™ changed our haemorrhagic shock protocol. Haemodynamic stabilisation is immediate. We have cut our pre-surgical mortality by 35% in 18 months."',
-        'testimonials.t1Role': 'Head of Trauma Surgery, National Hospital',
-        'testimonials.t2': '"We have worked with the NAR line for 5 years. Reliability is flawless. Our operators are fully trained and respond confidently under extreme pressure."',
-        'testimonials.t2Role': 'Special Forces, Southern Region',
-        'testimonials.t3': '"BairesTac’s courses are excellent. Certified trainers, up-to-date content and a focus on real-world applicability. Our team feels prepared."',
-        'testimonials.t3Role': 'Head of Paramedics, Fire Department',
-        'testimonials.t4': '"HemaClear® is standard in our operating room. The speed at which a bloodless field is established is unmatched. Zero complications in over 500 procedures."',
-        'testimonials.t4Role': 'Orthopaedic Surgeon, Private Surgical Centre',
 
         'certs.title': '<span class="text-orange">International</span> certifications and validations',
         'certs.lead': 'Our products meet the highest global safety and efficacy standards.',
