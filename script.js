@@ -1,100 +1,190 @@
+/* Destino del formulario de contacto.
+   FormSubmit reenvía la consulta a esta casilla. La primera vez que alguien
+   envía el formulario, FormSubmit manda un mail de activación a esta dirección:
+   hay que abrirlo y hacer clic una sola vez para habilitar el envío. */
+const CONTACT_EMAIL = 'bairestacsrl@gmail.com';
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + CONTACT_EMAIL;
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Navbar scroll effect
+
+    /* ---------- Navbar: fondo al hacer scroll ---------- */
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-    // Mobile Menu Toggle logic (simple implementation)
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    hamburger.addEventListener('click', () => {
-        if (navLinks.style.display === 'flex') {
-            navLinks.style.display = 'none';
-        } else {
-            navLinks.style.display = 'flex';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '70px';
-            navLinks.style.left = '0';
-            navLinks.style.width = '100%';
-            navLinks.style.backgroundColor = 'var(--bg-card)';
-            navLinks.style.padding = '20px';
-            navLinks.style.borderBottom = '1px solid var(--border-color)';
-        }
-    });
+    /* ---------- Menú mobile ---------- */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
-    // Intersection Observer for Scroll Animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
+    const closeMenu = () => {
+        navLinks.classList.remove('is-open');
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-up').forEach(el => {
-        observer.observe(el);
+    hamburger.addEventListener('click', () => {
+        const willOpen = !navLinks.classList.contains('is-open');
+        navLinks.classList.toggle('is-open', willOpen);
+        hamburger.classList.toggle('is-open', willOpen);
+        hamburger.setAttribute('aria-expanded', String(willOpen));
     });
 
-    // Original Tabs Functionality (Casos de Uso)
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabPanes = document.querySelectorAll('.tab-pane');
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabPanes.forEach(p => p.classList.remove('active'));
-
-            btn.classList.add('active');
-            const targetId = btn.getAttribute('data-tab');
-            document.getElementById(targetId).classList.add('active');
-        });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeMenu();
     });
 
-    // Technical Specs Tabs
+    /* ---------- Animaciones al entrar en viewport ---------- */
+    const animated = document.querySelectorAll('.fade-up');
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        animated.forEach(el => el.classList.add('visible'));
+    } else {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        animated.forEach(el => observer.observe(el));
+    }
+
+    /* ---------- Tabs de especificaciones técnicas ---------- */
     const specsBtns = document.querySelectorAll('.specs-tab-btn');
     const specsPanes = document.querySelectorAll('.specs-pane');
 
     specsBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            specsBtns.forEach(b => b.classList.remove('active'));
-            specsPanes.forEach(p => p.classList.remove('active'));
+            specsBtns.forEach(b => {
+                b.classList.remove('is-active');
+                b.setAttribute('aria-selected', 'false');
+            });
+            specsPanes.forEach(p => p.classList.remove('is-active'));
 
-            btn.classList.add('active');
-            const targetId = btn.getAttribute('data-specs');
-            document.getElementById(targetId).classList.add('active');
+            btn.classList.add('is-active');
+            btn.setAttribute('aria-selected', 'true');
+            document.getElementById(btn.dataset.specs).classList.add('is-active');
         });
     });
 
-    // FAQ Accordion
-    const faqQuestions = document.querySelectorAll('.faq-question');
-
-    faqQuestions.forEach(question => {
+    /* ---------- Acordeón de preguntas frecuentes ---------- */
+    document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', () => {
-            const faqItem = question.parentElement;
-            const isActive = faqItem.classList.contains('active');
+            const item = question.closest('.faq-item');
+            const wasOpen = item.classList.contains('active');
 
-            // Close all FAQs
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
+            document.querySelectorAll('.faq-item').forEach(other => {
+                other.classList.remove('active');
+                other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
             });
 
-            // Open clicked FAQ if it wasn't already open
-            if (!isActive) {
-                faqItem.classList.add('active');
+            if (!wasOpen) {
+                item.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
             }
         });
+    });
+
+    /* ---------- Enlace activo en la navegación según la sección visible ---------- */
+    const sections = document.querySelectorAll('main section[id], main header[id]');
+    const navAnchors = navLinks.querySelectorAll('a[href^="#"]');
+
+    if (sections.length) {
+        const spy = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                navAnchors.forEach(a => {
+                    a.classList.toggle('is-current', a.getAttribute('href') === '#' + entry.target.id);
+                });
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+
+        sections.forEach(s => spy.observe(s));
+    }
+
+    /* ---------- Formulario de contacto ---------- */
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    const showStatus = (messageKey, state) => {
+        statusEl.textContent = t(messageKey);
+        statusEl.className = 'form-status is-' + state;
+    };
+
+    const setLoading = (isLoading) => {
+        submitBtn.disabled = isLoading;
+        submitBtn.classList.toggle('is-loading', isLoading);
+        submitBtn.querySelector('.btn-label').textContent = t(isLoading ? 'form.sending' : 'form.submit');
+    };
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const nombre = form.elements['Nombre'].value.trim();
+        const email = form.elements['email'].value.trim();
+        const mensaje = form.elements['Mensaje'].value.trim();
+
+        if (!nombre || !email || !mensaje) {
+            showStatus('form.errRequired', 'error');
+            (!nombre ? form.elements['Nombre'] : !email ? form.elements['email'] : form.elements['Mensaje']).focus();
+            return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+            showStatus('form.errEmail', 'error');
+            form.elements['email'].focus();
+            return;
+        }
+
+        // El honeypot solo lo completa un bot: si trae texto, fingimos éxito y no enviamos.
+        if (form.elements['_honey'].value) {
+            showStatus('form.success', 'success');
+            form.reset();
+            return;
+        }
+
+        setLoading(true);
+        statusEl.textContent = '';
+        statusEl.className = 'form-status';
+
+        const payload = {
+            Nombre: nombre,
+            Empresa: form.elements['Empresa'].value.trim(),
+            email: email,
+            'Teléfono': form.elements['Teléfono'].value.trim(),
+            'País': form.elements['País'].value,
+            'Interés': form.elements['Interés'].value,
+            Mensaje: mensaje,
+            _subject: 'Nueva consulta desde bairestac.com — ' + nombre,
+            _template: 'table',
+            _captcha: 'false'
+        };
+
+        try {
+            const response = await fetch(FORM_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+
+            showStatus('form.success', 'success');
+            form.reset();
+        } catch (error) {
+            console.error('Error al enviar el formulario:', error);
+            showStatus('form.errSend', 'error');
+        } finally {
+            setLoading(false);
+        }
     });
 });

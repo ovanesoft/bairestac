@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BairesTac | Equipamiento Médico Táctico de Alta Performance</title>
-    <meta name="description"
-        content="Distribuidor técnico exclusivo para el Cono Sur en medicina táctica y control de hemorragia. Representantes de OHK Medical Devices, HemaShock, y Australis Group.">
+    <title data-i18n="meta.title">BairesTac | Soluciones integrales para la atención de emergencias</title>
+    <meta name="description" data-i18n-content="meta.description"
+        content="Empresa argentina especializada en soluciones integrales para emergencias prehospitalarias, medicina táctica y control de hemorragias. Representantes oficiales de OHK Medical, SAM Medical y North American Rescue.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
@@ -15,689 +15,1091 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido principal</a>
+
+    <!-- Icon sprite -->
+    <svg class="svg-defs" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <symbol id="i-equipamiento" viewBox="0 0 24 24">
+                <path d="M3 8h18v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                <path d="M12 12v5M9.5 14.5h5" />
+            </symbol>
+            <symbol id="i-formacion" viewBox="0 0 24 24">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                <path d="M9 7h7M9 11h5" />
+            </symbol>
+            <symbol id="i-asesoramiento" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="m15.5 8.5-2 5-5 2 2-5z" />
+            </symbol>
+            <symbol id="i-hospital" viewBox="0 0 24 24">
+                <path d="M3 21h18" />
+                <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16" />
+                <path d="M12 7v6M9 10h6" />
+                <path d="M9 21v-4h6v4" />
+            </symbol>
+            <symbol id="i-ems" viewBox="0 0 24 24">
+                <path d="M2 17V9a1 1 0 0 1 1-1h11v9" />
+                <path d="M14 11h4l3 3v3h-7" />
+                <circle cx="7" cy="18" r="2" />
+                <circle cx="17" cy="18" r="2" />
+                <path d="M7 10.5v3M5.5 12h3" />
+            </symbol>
+            <symbol id="i-industria" viewBox="0 0 24 24">
+                <path d="M2 21h20" />
+                <path d="M4 21V11l5 3V11l5 3V8l6 4v9" />
+                <path d="M8 17h2M14 17h2" />
+            </symbol>
+            <symbol id="i-energia" viewBox="0 0 24 24">
+                <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
+            </symbol>
+            <symbol id="i-bomberos" viewBox="0 0 24 24">
+                <path d="M12 22a7 7 0 0 0 7-7c0-6-7-11-7-11S5 9 5 15a7 7 0 0 0 7 7z" />
+                <path d="M12 22a3 3 0 0 0 3-3c0-2.5-3-5-3-5s-3 2.5-3 5a3 3 0 0 0 3 3z" />
+            </symbol>
+            <symbol id="i-seguridad" viewBox="0 0 24 24">
+                <path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+            </symbol>
+            <symbol id="i-armadas" viewBox="0 0 24 24">
+                <path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z" />
+                <path d="m8 12 4-3 4 3" />
+                <path d="m8 16 4-3 4 3" />
+            </symbol>
+            <symbol id="i-entrenamiento" viewBox="0 0 24 24">
+                <path d="m2 8 10-4 10 4-10 4z" />
+                <path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5" />
+                <path d="M22 8v6" />
+            </symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m2 7 10 6 10-6" />
+            </symbol>
+            <symbol id="i-phone" viewBox="0 0 24 24">
+                <path
+                    d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+            </symbol>
+            <symbol id="i-arrow" viewBox="0 0 24 24">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+            </symbol>
+        </defs>
+    </svg>
+
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-content">
-            <a href="#" class="logo">
+            <a href="#inicio" class="logo">
                 <span class="logo-baires">Baires</span><span class="logo-tac">Tac</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#casos">Casos de Uso</a></li>
-                <li><a href="#capacitacion">Capacitación</a></li>
-                <li><a href="#contacto">Nosotros</a></li>
-                <li><a href="#contacto" class="btn-primary-outline btn-small">Cotización</a></li>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio" data-i18n="nav.inicio">Inicio</a></li>
+                <li><a href="#nosotros" data-i18n="nav.nosotros">Nosotros</a></li>
+                <li><a href="#soluciones" data-i18n="nav.soluciones">Soluciones</a></li>
+                <li><a href="#portafolio" data-i18n="nav.portafolio">Portafolio</a></li>
+                <li><a href="#capacitacion" data-i18n="nav.capacitacion">Capacitación</a></li>
+                <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="nav-actions">
+                <div class="lang-switch" role="group" data-i18n-aria-label="a11y.langGroup"
+                    aria-label="Seleccionar idioma">
+                    <button type="button" class="lang-btn is-active" data-lang="es" aria-pressed="true"
+                        lang="es">ES</button>
+                    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" lang="en">EN</button>
+                </div>
+
+                <button class="hamburger" id="hamburger" type="button" aria-expanded="false" aria-controls="navLinks"
+                    data-i18n-aria-label="a11y.menu" aria-label="Abrir menú de navegación">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <div class="badge fade-up">Distribuidor Exclusivo Cono Sur</div>
-                <h1 class="fade-up stagger-1">Control de Hemorragia en <span class="text-orange">Segundos</span></h1>
-                <p class="fade-up stagger-2">Equipamiento médico táctico de última generación. Tecnología israelí y
-                    norteamericana validada en combate y emergencias hospitalarias extremas.</p>
-                <div class="hero-actions fade-up stagger-3">
-                    <a href="#productos" class="btn-primary">Explorar Arsenal Médico</a>
-                    <a href="#contacto" class="btn-secondary">Contactar un Asesor</a>
-                </div>
+    <main id="main">
 
-                <div class="hero-logos fade-up stagger-4">
-                    <p>REPRESENTANTES EXCLUSIVOS DE:</p>
-                    <div class="logos-grid">
-                        <span class="brand-text">HemaShock™</span>
-                        <span class="brand-text">HemaClear®</span>
-                        <span class="brand-text">SAM Medical</span>
-                        <span class="brand-text">North American Rescue</span>
+        <!-- Hero / Inicio -->
+        <header class="hero" id="inicio">
+            <div class="hero-bg"></div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <div class="badge fade-up" data-i18n="hero.badge">Representantes oficiales · Cono Sur</div>
+                    <h1 class="fade-up stagger-1" data-i18n="hero.title">Cuando cada segundo <span
+                            class="text-orange">define el resultado</span></h1>
+                    <p class="fade-up stagger-2" data-i18n="hero.lead">Soluciones integrales para la atención de
+                        emergencias prehospitalarias, medicina táctica y control de hemorragias. Equipamiento de última
+                        generación, capacitación especializada y asesoramiento técnico.</p>
+                    <div class="hero-actions fade-up stagger-3">
+                        <a href="#portafolio" class="btn-primary" data-i18n="hero.ctaPrimary">Ver portafolio</a>
+                        <a href="#contacto" class="btn-secondary" data-i18n="hero.ctaSecondary">Contactar un
+                            asesor</a>
+                    </div>
+
+                    <div class="hero-logos fade-up stagger-4">
+                        <p data-i18n="hero.brandsLabel">Representantes oficiales de:</p>
+                        <div class="logos-grid">
+                            <span class="brand-text">OHK Medical</span>
+                            <span class="brand-text">SAM Medical</span>
+                            <span class="brand-text">North American Rescue</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- Products Section -->
-    <section id="productos" class="section">
-        <div class="container">
-            <div class="section-header text-center fade-up">
-                <h2>Arsenal Médico Táctico</h2>
-                <p>Nuestra selección de insumos de clase mundial, diseñados para salvar vidas en la "hora dorada".</p>
-            </div>
-
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card fade-up stagger-1">
-                    <div class="product-img">
-                        <img src="images/hemashock-product.png" alt="HemaShock Torniquete">
-                        <div class="product-badge">Producto Estrella</div>
+        <!-- Nosotros -->
+        <section id="nosotros" class="section">
+            <div class="container">
+                <div class="editorial-grid">
+                    <div class="editorial-aside fade-up">
+                        <span class="eyebrow" data-i18n="about.eyebrow">01 — Nosotros</span>
+                        <h2 data-i18n="about.title">Quiénes <span class="text-orange">somos</span></h2>
                     </div>
-                    <div class="product-content">
-                        <h3>HemaShock™ <span class="text-orange">A-TT</span></h3>
-                        <p class="product-desc">Torniquete de auto-transfusión de emergencia. Desplaza más de 1.000 cc
-                            de sangre autóloga en menos de 30 segundos.</p>
-                        <ul class="product-features">
-                            <li><i class="icon-check"></i> Hipotensión severa</li>
-                            <li><i class="icon-check"></i> Paro cardíaco (adjunto a RCP)</li>
-                            <li><i class="icon-check"></i> Shock hemorrágico severo</li>
-                        </ul>
-                        <a href="#contacto" class="btn-primary-outline btn-small w-100 text-center">Solicitar
-                            Cotización</a>
+
+                    <div class="editorial-body fade-up stagger-1">
+                        <p class="lead" data-i18n="about.p1">Baires TAC es una empresa argentina especializada en
+                            soluciones integrales para la atención de emergencias prehospitalarias, medicina táctica y
+                            control de hemorragias.</p>
+                        <p data-i18n="about.p2">Como representantes oficiales de tecnologías médicas de reconocimiento
+                            internacional, acercamos al Cono Sur equipamiento de última generación respaldado por
+                            evidencia científica, certificaciones internacionales y los más altos estándares de calidad.
+                        </p>
+                        <p data-i18n="about.p3">Complementamos nuestra propuesta con capacitación especializada y
+                            asesoramiento técnico, acompañando a instituciones de salud, fuerzas de seguridad,
+                            industrias y organizaciones que requieren soluciones confiables para responder eficazmente
+                            ante situaciones críticas.</p>
+                        <p data-i18n="about.p4">En Baires TAC entendemos que cada decisión puede marcar la diferencia en
+                            una emergencia. Por eso trabajamos para ofrecer no solo productos de excelencia, sino
+                            también el conocimiento y el respaldo necesarios para que nuestros clientes actúen con
+                            seguridad cuando más importa.</p>
                     </div>
                 </div>
 
-                <!-- Product 2 -->
-                <div class="product-card fade-up stagger-2">
+                <div class="mv-grid">
+                    <article class="mv-card fade-up stagger-1">
+                        <span class="mv-tag" data-i18n="about.missionTag">Misión</span>
+                        <h3 data-i18n="about.missionTitle">Nuestra Misión</h3>
+                        <p data-i18n="about.missionText">Brindar soluciones integrales para la atención de emergencias
+                            mediante la distribución de equipamiento médico de excelencia, la capacitación especializada
+                            y el asesoramiento técnico, contribuyendo a mejorar la preparación y la capacidad de
+                            respuesta de los profesionales que intervienen en situaciones críticas.</p>
+                    </article>
+
+                    <article class="mv-card mv-card--olive fade-up stagger-2">
+                        <span class="mv-tag" data-i18n="about.visionTag">Visión</span>
+                        <h3 data-i18n="about.visionTitle">Nuestra Visión</h3>
+                        <p data-i18n="about.visionText">Ser la empresa referente del Cono Sur en equipamiento médico,
+                            medicina táctica y capacitación para emergencias, reconocida por representar marcas líderes
+                            a nivel mundial, impulsar la innovación y generar un impacto positivo en la atención de
+                            pacientes y la preservación de la vida.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Soluciones -->
+        <section id="soluciones" class="section bg-card">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="eyebrow" data-i18n="solutions.eyebrow">02 — Soluciones</span>
+                    <h2 data-i18n="solutions.title">Soluciones integrales: equipamiento, capacitación y <span
+                            class="text-orange">asesoramiento</span></h2>
+                    <p data-i18n="solutions.lead">En Baires TAC desarrollamos soluciones integrales para la atención de
+                        emergencias, combinando equipamiento médico especializado, capacitación profesional y
+                        asesoramiento técnico. Nuestro objetivo es acompañar a cada organización con herramientas,
+                        conocimientos y soporte que fortalezcan su capacidad de respuesta ante situaciones críticas.</p>
+                </div>
+
+                <div class="pillars-grid">
+                    <article class="pillar-card fade-up stagger-1">
+                        <span class="pillar-num">01</span>
+                        <svg class="icon icon-lg" aria-hidden="true">
+                            <use href="#i-equipamiento" />
+                        </svg>
+                        <h3 data-i18n="solutions.p1Title">Equipamiento médico especializado</h3>
+                        <p data-i18n="solutions.p1a">Como representantes oficiales para el Cono Sur de OHK Medical, SAM
+                            Medical y North American Rescue (NAR), acercamos tecnologías de referencia internacional
+                            para medicina táctica, atención prehospitalaria y control de hemorragias.</p>
+                        <p data-i18n="solutions.p1b">Nuestro portafolio reúne soluciones respaldadas por evidencia
+                            científica, certificaciones internacionales y los más altos estándares de calidad,
+                            ofreciendo a profesionales e instituciones acceso a equipamiento confiable para escenarios
+                            de alta exigencia.</p>
+                    </article>
+
+                    <article class="pillar-card fade-up stagger-2">
+                        <span class="pillar-num">02</span>
+                        <svg class="icon icon-lg" aria-hidden="true">
+                            <use href="#i-formacion" />
+                        </svg>
+                        <h3 data-i18n="solutions.p2Title">Capacitación y formación profesional</h3>
+                        <p data-i18n="solutions.p2a">Baires TAC desarrolla programas de capacitación práctica destinados
+                            a profesionales de la salud, brigadas de emergencia, personal de seguridad e higiene,
+                            fuerzas de seguridad, industrias y organizaciones que requieren una preparación eficaz para
+                            actuar en situaciones críticas.</p>
+                        <p data-i18n="solutions.p2b">Nuestra propuesta incluye formación en control de hemorragias,
+                            manejo inicial del trauma, medicina táctica y atención prehospitalaria, con programas
+                            certificados por la Sociedad Argentina de Medicina Táctica (SAMT) y otras instituciones
+                            estratégicas.</p>
+                    </article>
+
+                    <article class="pillar-card fade-up stagger-3">
+                        <span class="pillar-num">03</span>
+                        <svg class="icon icon-lg" aria-hidden="true">
+                            <use href="#i-asesoramiento" />
+                        </svg>
+                        <h3 data-i18n="solutions.p3Title">Asesoramiento y soporte técnico</h3>
+                        <p data-i18n="solutions.p3a">Acompañamos a nuestros clientes en la evaluación, selección e
+                            implementación de soluciones adaptadas a las necesidades específicas de cada operación.</p>
+                        <p data-i18n="solutions.p3b">Brindamos asesoramiento técnico para la provisión integral de
+                            equipamiento, recomendaciones según el perfil de riesgo de cada organización y soporte
+                            especializado para garantizar la correcta incorporación y utilización de cada solución.</p>
+                    </article>
+                </div>
+
+                <p class="solutions-closing fade-up" data-i18n="solutions.closing">Cada proyecto es abordado de manera
+                    integral, combinando tecnología, formación y acompañamiento técnico para ofrecer soluciones
+                    confiables, eficientes y adaptadas a las necesidades de cada cliente.</p>
+            </div>
+        </section>
+
+        <!-- Portafolio Tecnológico -->
+        <section id="portafolio" class="section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="eyebrow" data-i18n="portfolio.eyebrow">03 — Portafolio</span>
+                    <h2 data-i18n="portfolio.title">Portafolio <span class="text-orange">tecnológico</span></h2>
+                    <p data-i18n="portfolio.lead">Nuestra selección de insumos de clase mundial, diseñados para salvar
+                        vidas en la "hora dorada".</p>
+                </div>
+
+                <div class="products-grid">
+                    <!-- Producto 1 -->
+                    <article class="product-card fade-up stagger-1">
                         <div class="product-img">
-                            <img src="images/hemaclear-product.png" alt="HemaClear Torniquete Quirúrgico">
+                            <img src="images/hemashock-product.png" alt="Torniquete de autotransfusión HemaShock A-TT">
+                            <div class="product-badge" data-i18n="portfolio.p1Badge">Producto estrella</div>
                         </div>
-                    <div class="product-content">
-                        <h3>HemaClear® <span class="text-olive">S-TT</span></h3>
-                        <p class="product-desc">Torniquete quirúrgico estéril. Permite un campo operatorio exsangüe.
-                            Usado en más de 1.2M de cirugías a nivel global.</p>
-                        <ul class="product-features">
-                            <li><i class="icon-check"></i> Cirugía ortopédica de extremidades</li>
-                            <li><i class="icon-check"></i> Campo visual limpio y sin sangre</li>
-                            <li><i class="icon-check"></i> Fácil aplicación en quirófano</li>
-                        </ul>
-                        <a href="#contacto" class="btn-primary-outline btn-small w-100 text-center">Consultar
-                            Disponibilidad</a>
-                    </div>
-                </div>
+                        <div class="product-content">
+                            <h3>HemaShock™ <span class="text-orange">A-TT</span></h3>
+                            <p class="product-desc" data-i18n="portfolio.p1Desc">Torniquete de auto-transfusión de
+                                emergencia. Desplaza más de 1.000 cc de sangre autóloga en menos de 30 segundos.</p>
+                            <ul class="product-features">
+                                <li><i class="icon-check"></i><span data-i18n="portfolio.p1f1">Hipotensión
+                                        severa</span></li>
+                                <li><i class="icon-check"></i><span data-i18n="portfolio.p1f2">Paro cardíaco (adjunto a
+                                        RCP)</span></li>
+                                <li><i class="icon-check"></i><span data-i18n="portfolio.p1f3">Shock hemorrágico
+                                        severo</span></li>
+                            </ul>
+                            <a href="#contacto" class="btn-primary-outline btn-small w-100 text-center"
+                                data-i18n="portfolio.ctaQuote">Solicitar cotización</a>
+                        </div>
+                    </article>
 
-                <!-- Product 3 -->
-                <div class="product-card fade-up stagger-3">
+                    <!-- Producto 2 -->
+                    <article class="product-card fade-up stagger-2">
                         <div class="product-img">
-                            <img src="images/sam-nar-products.png" alt="Productos SAM Medical y NAR">
+                            <img src="images/hemaclear-product.png" alt="Torniquete quirúrgico HemaClear S-TT">
                         </div>
-                    <div class="product-content">
-                        <h3>SAM Medical / NAR</h3>
-                        <p class="product-desc">Línea completa de insumos de medicina táctica, vendajes hemostáticos,
-                            férulas y kits de trauma (Vía Australis Group).</p>
-                        <ul class="product-features">
-                            <li><i class="icon-check"></i> SAM Splint, SAM XT</li>
-                            <li><i class="icon-check"></i> Vendajes NAR, C-A-T</li>
-                            <li><i class="icon-check"></i> Insumos para algoritmos MARCH/PAWS</li>
+                        <div class="product-content">
+                            <h3>HemaClear® <span class="text-olive">S-TT</span></h3>
+                            <p class="product-desc" data-i18n="portfolio.p2Desc">Torniquete quirúrgico estéril. Permite
+                                un campo operatorio exsangüe. Usado en más de 1.2M de cirugías a nivel global.</p>
+                            <ul class="product-features">
+                                <li><i class="icon-check"></i><span data-i18n="portfolio.p2f1">Cirugía ortopédica de
+                                        extremidades</span></li>
+                                <li><i class="icon-check"></i><span data-i18n="portfolio.p2f2">Campo visual limpio y sin
+                                        sangre</span></li>
+                                <li><i class="icon-check"></i><span data-i18n="portfolio.p2f3">Fácil aplicación en
+                                        quirófano</span></li>
+                            </ul>
+                            <a href="#contacto" class="btn-primary-outline btn-small w-100 text-center"
+                                data-i18n="portfolio.ctaAvail">Consultar disponibilidad</a>
+                        </div>
+                    </article>
+
+                    <!-- Producto 3 -->
+                    <article class="product-card fade-up stagger-3">
+                        <div class="product-img">
+                            <img src="images/sam-nar-products.png" alt="Insumos SAM Medical y North American Rescue">
+                        </div>
+                        <div class="product-content">
+                            <h3>SAM Medical / NAR</h3>
+                            <p class="product-desc" data-i18n="portfolio.p3Desc">Línea completa de insumos de medicina
+                                táctica, vendajes hemostáticos, férulas y kits de trauma.</p>
+                            <ul class="product-features">
+                                <li><i class="icon-check"></i><span data-i18n="portfolio.p3f1">SAM Splint, SAM
+                                        XT</span></li>
+                                <li><i class="icon-check"></i><span data-i18n="portfolio.p3f2">Vendajes NAR,
+                                        C-A-T</span></li>
+                                <li><i class="icon-check"></i><span data-i18n="portfolio.p3f3">Insumos para algoritmos
+                                        MARCH/PAWS</span></li>
+                            </ul>
+                            <a href="#contacto" class="btn-primary-outline btn-small w-100 text-center"
+                                data-i18n="portfolio.ctaCatalog">Ver catálogo completo</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Especificaciones técnicas -->
+                <div class="specs-container fade-up mt-6">
+                    <div class="specs-tabs" role="tablist" data-i18n-aria-label="a11y.specsTabs"
+                        aria-label="Especificaciones técnicas por producto">
+                        <button class="specs-tab-btn is-active" type="button" role="tab" aria-selected="true"
+                            data-specs="specs-hemashock">HemaShock™ A-TT</button>
+                        <button class="specs-tab-btn" type="button" role="tab" aria-selected="false"
+                            data-specs="specs-hemaclear">HemaClear® S-TT</button>
+                        <button class="specs-tab-btn" type="button" role="tab" aria-selected="false"
+                            data-specs="specs-nar">SAM &amp; NAR</button>
+                    </div>
+
+                    <div class="specs-content">
+                        <div class="specs-pane is-active" id="specs-hemashock" role="tabpanel">
+                            <h3>HemaShock™ Auto-Transfusion Tourniquet (A-TT)</h3>
+                            <div class="specs-details">
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.mechanism">Mecanismo</div>
+                                    <p data-i18n="specs.hs.mechanism">Sistema de desplazamiento centrífugo de sangre con
+                                        compresión externa controlada.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.volume">Volumen desplazado</div>
+                                    <p data-i18n="specs.hs.volume">1.000 - 1.200 cc de sangre autóloga en menos de 30
+                                        segundos.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.pressure">Presión de oclusión</div>
+                                    <p data-i18n="specs.hs.pressure">180-220 mmHg (arterial), titulables según necesidad
+                                        clínica.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.safety">Tiempo de seguridad</div>
+                                    <p data-i18n="specs.hs.safety">Aplicación segura por hasta 120 minutos sin daño
+                                        tisular.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.indications">Indicaciones clínicas</div>
+                                    <p data-i18n="specs.hs.indications">Shock hemorrágico, hipotensión severa, paro
+                                        cardíaco + RCP, trauma penetrante exanguinante.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.certs">Certificaciones</div>
+                                    <p data-i18n="specs.hs.certs">FDA 510(k), CE Mark, validación clínica en más de 18
+                                        publicaciones peer-reviewed.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="specs-pane" id="specs-hemaclear" role="tabpanel">
+                            <h3>HemaClear® Surgical Tourniquet (S-TT)</h3>
+                            <div class="specs-details">
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.design">Diseño</div>
+                                    <p data-i18n="specs.hc.design">Torniquete estéril de un solo uso, ergonómico y de
+                                        rápida aplicación.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.field">Campo exsangüe</div>
+                                    <p data-i18n="specs.hc.field">Línea isquémica clara en menos de 90 segundos, sin
+                                        sangrado de bordes.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.material">Material</div>
+                                    <p data-i18n="specs.hc.material">Silicona médica hipoalergénica, resistente a
+                                        fluidos corporales y antisépticos.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.compat">Compatibilidad</div>
+                                    <p data-i18n="specs.hc.compat">Extremidades superiores e inferiores; cirugía
+                                        ortopédica, plástica y vascular.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.ischemia">Tiempo de isquemia</div>
+                                    <p data-i18n="specs.hc.ischemia">Seguro hasta 180 minutos en extremidades sin
+                                        documentación de complicaciones.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.validation">Validación</div>
+                                    <p data-i18n="specs.hc.validation">Utilizado en más de 1.2M de procedimientos; ISO
+                                        13485, CE Mark Clase IIA.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="specs-pane" id="specs-nar" role="tabpanel">
+                            <h3>SAM Medical &amp; North American Rescue (NAR)</h3>
+                            <div class="specs-details">
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.samLine">Línea SAM</div>
+                                    <p data-i18n="specs.nar.samLine">SAM Splint, SAM XT, férulas de vacío y tablillas
+                                        modulares para inmovilización.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.narLine">Línea NAR</div>
+                                    <p data-i18n="specs.nar.narLine">Vendajes hemostáticos (Combat Gauze, QuikClot),
+                                        torniquetes C-A-T, kits C-TECC.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.algorithms">Algoritmos</div>
+                                    <p data-i18n="specs.nar.algorithms">Compatibilidad total con MARCH (Massive
+                                        bleeding, Airway, Respiration, Circulation, Hypothermia) y PAWS.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.stock">Capacidad de stock</div>
+                                    <p data-i18n="specs.nar.stock">Disponibilidad en distribución directa y kits
+                                        personalizados según protocolos institucionales.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.certs2">Certificaciones</div>
+                                    <p data-i18n="specs.nar.certs">Equipamiento estándar en operaciones militares OTAN,
+                                        FBI-HRT, MARSOC, DEA-SRT.</p>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label" data-i18n="specs.training">Entrenamiento</div>
+                                    <p data-i18n="specs.nar.training">Cursos de aplicación rápida, compatibles con
+                                        TCCC/TECC, en menos de 8 horas de capacitación.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ámbitos de Aplicación -->
+        <section id="ambitos" class="section bg-card">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="eyebrow" data-i18n="fields.eyebrow">04 — Ámbitos</span>
+                    <h2 data-i18n="fields.title">Ámbitos de <span class="text-orange">aplicación</span></h2>
+                    <p data-i18n="fields.lead">Las soluciones que integran el portafolio de Baires TAC están diseñadas
+                        para adaptarse a una amplia variedad de entornos donde la preparación, la capacidad de respuesta
+                        y el acceso a equipamiento especializado resultan fundamentales. Acompañamos a organizaciones y
+                        profesionales con tecnologías, capacitación y asesoramiento orientados a las necesidades
+                        específicas de cada ámbito de aplicación.</p>
+                </div>
+
+                <div class="fields-grid">
+                    <article class="field-card fade-up stagger-1">
+                        <svg class="icon icon-md" aria-hidden="true">
+                            <use href="#i-hospital" />
+                        </svg>
+                        <h3 data-i18n="fields.f1Title">Hospitales y clínicas</h3>
+                        <p data-i18n="fields.f1Text">Soluciones para el manejo del trauma, control de hemorragias y
+                            fortalecimiento de la respuesta ante emergencias intrahospitalarias y prehospitalarias.</p>
+                    </article>
+
+                    <article class="field-card fade-up stagger-1">
+                        <svg class="icon icon-md" aria-hidden="true">
+                            <use href="#i-ems" />
+                        </svg>
+                        <h3 data-i18n="fields.f2Title">Servicios de emergencias médicas</h3>
+                        <p data-i18n="fields.f2Text">Equipamiento destinado a optimizar la atención inicial del paciente
+                            y la respuesta en escenarios de emergencia y rescate.</p>
+                    </article>
+
+                    <article class="field-card fade-up stagger-2">
+                        <svg class="icon icon-md" aria-hidden="true">
+                            <use href="#i-industria" />
+                        </svg>
+                        <h3 data-i18n="fields.f3Title">Industria</h3>
+                        <p data-i18n="fields.f3Text">Tecnologías orientadas a brigadas de emergencia, servicios médicos
+                            internos, áreas de seguridad e higiene y respuesta ante incidentes en entornos industriales.
+                        </p>
+                    </article>
+
+                    <article class="field-card fade-up stagger-2">
+                        <svg class="icon icon-md" aria-hidden="true">
+                            <use href="#i-energia" />
+                        </svg>
+                        <h3 data-i18n="fields.f4Title">Energía y recursos naturales</h3>
+                        <p data-i18n="fields.f4Text">Soluciones para operaciones desarrolladas en entornos de alta
+                            exigencia, donde la preparación y la respuesta inmediata resultan esenciales.</p>
+                    </article>
+
+                    <article class="field-card fade-up stagger-3">
+                        <svg class="icon icon-md" aria-hidden="true">
+                            <use href="#i-bomberos" />
+                        </svg>
+                        <h3 data-i18n="fields.f5Title">Bomberos y protección civil</h3>
+                        <p data-i18n="fields.f5Text">Equipamiento especializado para tareas de rescate, atención
+                            prehospitalaria y control de hemorragias durante la respuesta a emergencias.</p>
+                    </article>
+
+                    <article class="field-card fade-up stagger-3">
+                        <svg class="icon icon-md" aria-hidden="true">
+                            <use href="#i-seguridad" />
+                        </svg>
+                        <h3 data-i18n="fields.f6Title">Fuerzas de seguridad</h3>
+                        <p data-i18n="fields.f6Text">Tecnologías destinadas a la medicina táctica y la atención inicial
+                            en operaciones donde la intervención rápida puede resultar determinante.</p>
+                    </article>
+
+                    <article class="field-card fade-up stagger-4">
+                        <svg class="icon icon-md" aria-hidden="true">
+                            <use href="#i-armadas" />
+                        </svg>
+                        <h3 data-i18n="fields.f7Title">Fuerzas armadas</h3>
+                        <p data-i18n="fields.f7Text">Equipamiento diseñado para apoyar la atención prehospitalaria y el
+                            manejo inicial del trauma en distintos escenarios operativos.</p>
+                    </article>
+
+                    <article class="field-card fade-up stagger-4">
+                        <svg class="icon icon-md" aria-hidden="true">
+                            <use href="#i-entrenamiento" />
+                        </svg>
+                        <h3 data-i18n="fields.f8Title">Capacitación y entrenamiento</h3>
+                        <p data-i18n="fields.f8Text">Recursos para instituciones y organizaciones que buscan fortalecer
+                            la preparación de sus equipos mediante programas de formación, simulación y entrenamiento
+                            práctico.</p>
+                    </article>
+                </div>
+
+                <div class="cta-band fade-up">
+                    <div class="cta-band-text">
+                        <h3 data-i18n="fields.ctaTitle">¿Cómo podemos acompañar a tu organización?</h3>
+                        <p data-i18n="fields.ctaP1">Cada organización enfrenta desafíos diferentes y requiere soluciones
+                            acordes a su realidad operativa. En Baires TAC creemos que la combinación de tecnología,
+                            capacitación y asesoramiento técnico es la base para construir una respuesta más segura,
+                            eficiente y preparada ante situaciones críticas.</p>
+                        <p data-i18n="fields.ctaP2">Nuestro equipo está disponible para brindar más información y
+                            responder cualquier consulta sobre nuestras soluciones y servicios.</p>
+                    </div>
+                    <a href="#contacto" class="btn-primary cta-band-btn">
+                        <span data-i18n="fields.ctaBtn">Hablemos</span>
+                        <svg class="icon icon-sm" aria-hidden="true">
+                            <use href="#i-arrow" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capacitación -->
+        <section id="capacitacion" class="section">
+            <div class="container">
+                <div class="training-grid">
+                    <div class="training-img fade-up">
+                        <img src="images/training.png" alt="Entrenamiento en medicina táctica y control de hemorragias">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <div class="training-content fade-up stagger-1">
+                        <span class="eyebrow" data-i18n="training.eyebrow">05 — Capacitación</span>
+                        <h2 data-i18n="training.title">Capacitación <span class="text-olive">TCCC / TECC</span></h2>
+                        <p data-i18n="training.lead">En alianza con la Sociedad Argentina de Medicina Táctica (SAMT) y
+                            Australis Group / SETEC, BairesTac ofrece formación de élite al personal de primera línea.
+                        </p>
+
+                        <ul class="training-list mt-2">
+                            <li><strong data-i18n="training.i1Title">Cursos TCCC:</strong> <span
+                                    data-i18n="training.i1Text">Tactical Combat Casualty Care para entornos militares y
+                                    especiales.</span></li>
+                            <li><strong data-i18n="training.i2Title">Cursos TECC:</strong> <span
+                                    data-i18n="training.i2Text">Tactical Emergency Casualty Care para respondedores
+                                    civiles y policiales.</span></li>
+                            <li><strong data-i18n="training.i3Title">Control de hemorragias:</strong> <span
+                                    data-i18n="training.i3Text">Básico y avanzado para seguridad física y civil.</span>
+                            </li>
+                            <li><strong data-i18n="training.i4Title">Formación de instructores:</strong> <span
+                                    data-i18n="training.i4Text">Programa de certificación oficial en el Cono
+                                    Sur.</span></li>
                         </ul>
-                        <a href="#contacto" class="btn-primary-outline btn-small w-100 text-center">Ver Catálogo
-                            Completo</a>
+                        <a href="#contacto" class="btn-primary mt-2" data-i18n="training.cta">Consultar próximos
+                            cursos</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Casos de Uso Section -->
-    <section id="casos" class="section bg-card">
-        <div class="container">
-            <div class="section-header fade-up">
-                <h2>Aplicabilidad <span class="text-orange">Clínica y Táctica</span></h2>
-                <p>Nuestras soluciones son estándares de cuidado en múltiples escenarios críticos.</p>
-            </div>
-
-            <div class="cases-tabs fade-up stagger-1">
-                <div class="tabs-header">
-                    <button class="tab-btn active" data-tab="tab-hospital">Guardia Hospitalaria</button>
-                    <button class="tab-btn" data-tab="tab-tactico">Operadores Tácticos</button>
-                    <button class="tab-btn" data-tab="tab-rcp">RCP Avanzado</button>
-                    <button class="tab-btn" data-tab="tab-civil">Respondientes Civiles</button>
+        <!-- Impacto Clínico -->
+        <section class="section bg-card">
+            <div class="container">
+                <div class="section-header text-center fade-up">
+                    <h2 data-i18n="stats.title">Impacto clínico comprobado</h2>
+                    <p data-i18n="stats.lead">Números que demuestran la efectividad de nuestras soluciones en contextos
+                        reales.</p>
                 </div>
 
-                <div class="tabs-content">
-                    <div class="tab-pane active" id="tab-hospital">
-                        <div class="tab-grid">
-                            <div class="tab-text">
-                                <h3>Estabilización en Guardia Hospitalaria</h3>
-                                <p>El HemaShock™ funciona como un puente hemodinámico vital hasta la intervención
-                                    quirúrgica en pacientes con trauma severo.</p>
-                                <ul class="product-features mt-2">
-                                    <li>Manejo del shock hipotensivo en emergencias.</li>
-                                    <li>Reducción significativa del tiempo de isquemia.</li>
-                                    <li>Estabilidad durante la transición hacia el quirófano.</li>
-                                </ul>
-                            </div>
-                            <div class="tab-visual">
-                                <img src="images/guardia-hospitalaria.png" alt="Guardia Hospitalaria">
+                <div class="stats-grid">
+                    <div class="stat-card fade-up stagger-1">
+                        <div class="stat-number">1.2M+</div>
+                        <div class="stat-label" data-i18n="stats.s1Label">Procedimientos quirúrgicos</div>
+                        <p data-i18n="stats.s1Text">Torniquetes HemaClear® utilizados globalmente en cirugía.</p>
+                    </div>
+                    <div class="stat-card fade-up stagger-2">
+                        <div class="stat-number">40%</div>
+                        <div class="stat-label" data-i18n="stats.s2Label">Reducción de mortalidad</div>
+                        <p data-i18n="stats.s2Text">En trauma severo con aplicación de HemaShock™ vs estándar.</p>
+                    </div>
+                    <div class="stat-card fade-up stagger-3">
+                        <div class="stat-number" data-i18n="stats.s3Number">30 seg</div>
+                        <div class="stat-label" data-i18n="stats.s3Label">Tiempo de acción</div>
+                        <p data-i18n="stats.s3Text">HemaShock™ desplaza 1000 cc de sangre en menos de 30 segundos.</p>
+                    </div>
+                    <div class="stat-card fade-up stagger-4">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label" data-i18n="stats.s4Label">Tasa de éxito</div>
+                        <p data-i18n="stats.s4Text">En estabilización hemodinámica pre-quirúrgica reportada en
+                            literatura.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Casos de Éxito -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center fade-up">
+                    <h2 data-i18n="stories.title">Casos de éxito</h2>
+                    <p data-i18n="stories.lead">Historias reales de vidas salvadas en el Cono Sur.</p>
+                </div>
+
+                <div class="stories-grid">
+                    <article class="story-card fade-up stagger-1">
+                        <div class="story-header">
+                            <svg class="icon icon-md" aria-hidden="true">
+                                <use href="#i-hospital" />
+                            </svg>
+                            <h3 data-i18n="stories.c1Title">Hospital traumatológico central</h3>
+                        </div>
+                        <p class="story-desc"><strong data-i18n="stories.ctx">Contexto:</strong> <span
+                                data-i18n="stories.c1Ctx">Trauma penetrante de tórax con shock hemorrágico
+                                refractario.</span></p>
+                        <p class="story-desc"><strong data-i18n="stories.app">Aplicación:</strong> <span
+                                data-i18n="stories.c1App">HemaShock™ A-TT durante 45 minutos pre-quirúrgico.</span></p>
+                        <p class="story-result"><strong data-i18n="stories.res">Resultado:</strong> <span
+                                data-i18n="stories.c1Res">Paciente estabilizado, supervivencia y reinserción laboral
+                                completa. Evitó transfusión masiva.</span></p>
+                        <div class="story-location" data-i18n="stories.c1Loc">Argentina — 2024</div>
+                    </article>
+
+                    <article class="story-card fade-up stagger-2">
+                        <div class="story-header">
+                            <svg class="icon icon-md" aria-hidden="true">
+                                <use href="#i-armadas" />
+                            </svg>
+                            <h3 data-i18n="stories.c2Title">Operación táctica combinada</h3>
+                        </div>
+                        <p class="story-desc"><strong data-i18n="stories.ctx">Contexto:</strong> <span
+                                data-i18n="stories.c2Ctx">Operador herido con hemorragia exanguinante de muslo.</span>
+                        </p>
+                        <p class="story-desc"><strong data-i18n="stories.app">Aplicación:</strong> <span
+                                data-i18n="stories.c2App">NAR C-A-T + vendaje hemostático en teatro (CUF).</span></p>
+                        <p class="story-result"><strong data-i18n="stories.res">Resultado:</strong> <span
+                                data-i18n="stories.c2Res">Control de hemorragia en menos de 3 minutos, evacuación
+                                segura, recuperación total sin amputación.</span></p>
+                        <div class="story-location" data-i18n="stories.c2Loc">Región Sur — 2024</div>
+                    </article>
+
+                    <article class="story-card fade-up stagger-3">
+                        <div class="story-header">
+                            <svg class="icon icon-md" aria-hidden="true">
+                                <use href="#i-equipamiento" />
+                            </svg>
+                            <h3 data-i18n="stories.c3Title">Cirugía ortopédica de emergencia</h3>
+                        </div>
+                        <p class="story-desc"><strong data-i18n="stories.ctx">Contexto:</strong> <span
+                                data-i18n="stories.c3Ctx">Fractura expuesta con importantes daños vasculares.</span></p>
+                        <p class="story-desc"><strong data-i18n="stories.app">Aplicación:</strong> <span
+                                data-i18n="stories.c3App">HemaClear® S-TT para campo exsangüe en quirófano.</span></p>
+                        <p class="story-result"><strong data-i18n="stories.res">Resultado:</strong> <span
+                                data-i18n="stories.c3Res">Procedimiento de 2.5 h sin sangrado, preservación funcional
+                                completa del miembro.</span></p>
+                        <div class="story-location" data-i18n="stories.c3Loc">Chile — 2024</div>
+                    </article>
+
+                    <article class="story-card fade-up stagger-4">
+                        <div class="story-header">
+                            <svg class="icon icon-md" aria-hidden="true">
+                                <use href="#i-ems" />
+                            </svg>
+                            <h3 data-i18n="stories.c4Title">Respuesta médica de incidente masivo</h3>
+                        </div>
+                        <p class="story-desc"><strong data-i18n="stories.ctx">Contexto:</strong> <span
+                                data-i18n="stories.c4Ctx">8 víctimas de accidente vial con trauma severo
+                                múltiple.</span></p>
+                        <p class="story-desc"><strong data-i18n="stories.app">Aplicación:</strong> <span
+                                data-i18n="stories.c4App">Kits NAR con vendajes hemostáticos y algoritmo MARCH.</span>
+                        </p>
+                        <p class="story-result"><strong data-i18n="stories.res">Resultado:</strong> <span
+                                data-i18n="stories.c4Res">100% de sobrevida en sitio y hospital, mejora de 4 puntos en
+                                scores de resiliencia.</span></p>
+                        <div class="story-location" data-i18n="stories.c4Loc">Uruguay — 2024</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="section bg-card">
+            <div class="container">
+                <div class="section-header text-center fade-up">
+                    <h2 data-i18n="testimonials.title">Testimonios de profesionales</h2>
+                    <p data-i18n="testimonials.lead">Expertos en medicina táctica y trauma comparten su experiencia.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <figure class="testimonial-card fade-up stagger-1">
+                        <div class="stars" data-i18n-aria-label="a11y.rating" aria-label="5 de 5" role="img">★★★★★</div>
+                        <blockquote class="testimonial-text" data-i18n="testimonials.t1">"El HemaShock™ cambió nuestro
+                            protocolo de shock hemorrágico. La estabilización hemodinámica es inmediata. Hemos reducido
+                            nuestra mortalidad pre-quirúrgica un 35% en 18 meses."</blockquote>
+                        <figcaption class="testimonial-author">
+                            <strong>Dr. Carlos Mendoza</strong>
+                            <span data-i18n="testimonials.t1Role">Jefe de Traumatología, Hospital Nacional</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card fade-up stagger-2">
+                        <div class="stars" data-i18n-aria-label="a11y.rating" aria-label="5 de 5" role="img">★★★★★</div>
+                        <blockquote class="testimonial-text" data-i18n="testimonials.t2">"Trabajamos con la línea NAR
+                            desde hace 5 años. La confiabilidad es impecable. Nuestros operadores están capacitados al
+                            100% y responden con seguridad bajo presión extrema."</blockquote>
+                        <figcaption class="testimonial-author">
+                            <strong>Coronel Roberto Gutierrez</strong>
+                            <span data-i18n="testimonials.t2Role">Fuerzas Especiales, Región Sur</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card fade-up stagger-3">
+                        <div class="stars" data-i18n-aria-label="a11y.rating" aria-label="5 de 5" role="img">★★★★★</div>
+                        <blockquote class="testimonial-text" data-i18n="testimonials.t3">"Los cursos TCCC/TECC de
+                            BairesTac son excelentes. Formadores certificados, contenido actualizado, y énfasis en la
+                            aplicabilidad real. Nuestro equipo se siente preparado."</blockquote>
+                        <figcaption class="testimonial-author">
+                            <strong>Paula Rodríguez</strong>
+                            <span data-i18n="testimonials.t3Role">Jefa de Paramédicos, Cuerpo de Bomberos</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="testimonial-card fade-up stagger-4">
+                        <div class="stars" data-i18n-aria-label="a11y.rating" aria-label="5 de 5" role="img">★★★★★</div>
+                        <blockquote class="testimonial-text" data-i18n="testimonials.t4">"HemaClear® en nuestro
+                            quirófano es estándar. La velocidad de establecimiento del campo exsangüe es inigualable.
+                            Cero complicaciones en más de 500 procedimientos."</blockquote>
+                        <figcaption class="testimonial-author">
+                            <strong>Dra. Sofía Larsen</strong>
+                            <span data-i18n="testimonials.t4Role">Cirujana Ortopédica, Centro Quirúrgico Privado</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificaciones -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center fade-up">
+                    <h2 data-i18n="certs.title">Certificaciones y validaciones <span
+                            class="text-orange">internacionales</span></h2>
+                    <p data-i18n="certs.lead">Nuestros productos cumplen los más altos estándares de seguridad y
+                        eficacia globales.</p>
+                </div>
+
+                <div class="certifications-grid">
+                    <div class="cert-card fade-up stagger-1">
+                        <div class="cert-icon" aria-hidden="true">✓</div>
+                        <h3>FDA 510(k)</h3>
+                        <p data-i18n="certs.c1">Aprobación de dispositivo médico de la Administración de Drogas y
+                            Alimentos de EE.UU. Conformidad con estándares de seguridad precomercialización.</p>
+                    </div>
+                    <div class="cert-card fade-up stagger-2">
+                        <div class="cert-icon" aria-hidden="true">✓</div>
+                        <h3 data-i18n="certs.c2Title">CE Mark (Unión Europea)</h3>
+                        <p data-i18n="certs.c2">Conformidad con la Directiva de Dispositivos Médicos (MDR 2017/745).
+                            Auditoría independiente y validación clínica completa.</p>
+                    </div>
+                    <div class="cert-card fade-up stagger-3">
+                        <div class="cert-icon" aria-hidden="true">✓</div>
+                        <h3>ISO 13485:2016</h3>
+                        <p data-i18n="certs.c3">Sistema de gestión de calidad para dispositivos médicos. Trazabilidad,
+                            control de cambios y gestión de riesgos.</p>
+                    </div>
+                    <div class="cert-card fade-up stagger-4">
+                        <div class="cert-icon" aria-hidden="true">✓</div>
+                        <h3 data-i18n="certs.c4Title">Publicaciones clínicas</h3>
+                        <p data-i18n="certs.c4">Respaldo científico en Journal of Trauma, Resuscitation y Prehospital
+                            Emergency Care. Más de 18 estudios peer-reviewed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section bg-card">
+            <div class="container">
+                <div class="section-header text-center fade-up">
+                    <h2 data-i18n="faq.title">Preguntas frecuentes</h2>
+                    <p data-i18n="faq.lead">Resolvemos las dudas más comunes sobre nuestros productos y servicios.</p>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item fade-up stagger-1">
+                        <h3 class="faq-heading">
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a1">
+                                <span data-i18n="faq.q1">¿Cuál es la diferencia entre HemaShock™ y HemaClear®?</span>
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+                        <div class="faq-answer" id="faq-a1">
+                            <p data-i18n="faq.a1"><strong>HemaShock™ (A-TT)</strong> es un torniquete de emergencia que
+                                desplaza sangre autóloga masivamente para restaurar presión arterial en shock
+                                hemorrágico. <strong>HemaClear® (S-TT)</strong> es un torniquete quirúrgico estéril para
+                                crear un campo exsangüe durante cirugía. Usos completamente diferentes, ambos
+                                esenciales.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-up stagger-2">
+                        <h3 class="faq-heading">
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a2">
+                                <span data-i18n="faq.q2">¿Cuánto tiempo puedo mantener el torniquete aplicado?</span>
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+                        <div class="faq-answer" id="faq-a2">
+                            <p data-i18n="faq.a2">HemaShock™: seguro hasta 120 minutos sin riesgo de necrosis tisular.
+                                HemaClear®: hasta 180 minutos en extremidades. Ambos productos incluyen protocolos de
+                                monitoreo de isquemia y cuidados post-aplicación.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-up stagger-3">
+                        <h3 class="faq-heading">
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a3">
+                                <span data-i18n="faq.q3">¿Necesito entrenamiento especial para usar estos
+                                    productos?</span>
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+                        <div class="faq-answer" id="faq-a3">
+                            <p data-i18n="faq.a3">Sí. BairesTac ofrece cursos certificados TCCC/TECC de menos de 8 horas
+                                para NAR y SAM. HemaShock™ requiere entrenamiento médico avanzado. Ofrecemos
+                                instructores in situ y formación de capacitadores locales.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-up stagger-4">
+                        <h3 class="faq-heading">
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a4">
+                                <span data-i18n="faq.q4">¿Cuáles son las contraindicaciones principales?</span>
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+                        <div class="faq-answer" id="faq-a4">
+                            <p data-i18n="faq.a4">HemaShock™: no usar en hipovolemia sin hemorragia activa, fallo
+                                cardíaco severo, o presión sistólica basal mayor a 160 mmHg. HemaClear®: no usar en
+                                isquemia preexistente o trastornos vasculares severos. Consulte siempre a su médico
+                                responsable.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-up stagger-1">
+                        <h3 class="faq-heading">
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a5">
+                                <span data-i18n="faq.q5">¿Cómo es la logística de entrega en el Cono Sur?</span>
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+                        <div class="faq-answer" id="faq-a5">
+                            <p data-i18n="faq.a5">Trabajamos con Australis Group y SETEC. Entregas en Argentina, Chile,
+                                Uruguay, Paraguay, Bolivia y Brasil en 5-10 días hábiles. Almacenes locales en las
+                                principales ciudades. Transporte refrigerado para productos que lo requieran.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-up stagger-2">
+                        <h3 class="faq-heading">
+                            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a6">
+                                <span data-i18n="faq.q6">¿Ofrecen garantía o servicio técnico post-venta?</span>
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+                        <div class="faq-answer" id="faq-a6">
+                            <p data-i18n="faq.a6">Sí. Garantía de 2 años contra defectos de fabricación. Línea de
+                                soporte técnico 24/7. Repuestos y mantenimiento disponibles. Auditoría de uso y reportes
+                                de eficacia para instituciones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="eyebrow" data-i18n="contact.eyebrow">06 — Contacto</span>
+                    <h2 data-i18n="contact.title">¿Te interesa recibir <span class="text-orange">más
+                            información</span>?</h2>
+                    <p data-i18n="contact.lead">Si querés conocer más sobre nuestro equipamiento, coordinar una
+                        capacitación, realizar una consulta técnica o evaluar una solución para tu organización, podés
+                        dejarnos tu mensaje a través del formulario o comunicarte directamente con nosotros.</p>
+                </div>
+
+                <div class="contact-grid fade-up stagger-1">
+                    <div class="contact-info">
+                        <ul class="contact-channels">
+                            <li>
+                                <svg class="icon icon-md" aria-hidden="true">
+                                    <use href="#i-mail" />
+                                </svg>
+                                <div>
+                                    <span class="channel-label" data-i18n="contact.emailLabel">Correo electrónico</span>
+                                    <a href="mailto:bairestacsrl@gmail.com"
+                                        class="channel-value">bairestacsrl@gmail.com</a>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="icon icon-md" aria-hidden="true">
+                                    <use href="#i-phone" />
+                                </svg>
+                                <div>
+                                    <span class="channel-label" data-i18n="contact.waLabel">WhatsApp</span>
+                                    <a href="https://wa.me/5491100000000" class="channel-value" id="waLink"
+                                        target="_blank" rel="noopener">+54 9 11 0000-0000</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h3 class="mt-4" data-i18n="contact.whyTitle">Por qué elegirnos</h3>
+                        <ul class="why-us">
+                            <li><span class="icon-circle" aria-hidden="true">✓</span><span
+                                    data-i18n="contact.why1">Representación oficial de marcas líderes a nivel
+                                    mundial</span></li>
+                            <li><span class="icon-circle" aria-hidden="true">✓</span><span
+                                    data-i18n="contact.why2">Respaldo técnico y científico especializado</span></li>
+                            <li><span class="icon-circle" aria-hidden="true">✓</span><span
+                                    data-i18n="contact.why3">Certificaciones internacionales (FDA / CE)</span></li>
+                            <li><span class="icon-circle" aria-hidden="true">✓</span><span
+                                    data-i18n="contact.why4">Evidencia clínica publicada globalmente</span></li>
+                            <li><span class="icon-circle" aria-hidden="true">✓</span><span
+                                    data-i18n="contact.why5">Red logística robusta en todo el Cono Sur</span></li>
+                        </ul>
+
+                        <div class="allies-block mt-4">
+                            <h4 data-i18n="contact.alliesTitle">Nuestros aliados</h4>
+                            <div class="logos-grid small mt-2">
+                                <span class="brand-text">OHK Medical</span>
+                                <span class="brand-text">SAM Medical</span>
+                                <span class="brand-text">North American Rescue</span>
+                                <span class="brand-text">Australis Group</span>
+                                <span class="brand-text">SAMT</span>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane" id="tab-tactico">
-                        <div class="tab-grid">
-                            <div class="tab-text">
-                                <h3>Aplicación Bajo Fuego (CUF / TFC)</h3>
-                                <p>Para fuerzas de seguridad, el equipo permite el control rápido de hemorragia
-                                    exanguinante en terreno sin requerir la asistencia permanente de un segundo
-                                    operador.</p>
-                                <ul class="product-features mt-2">
-                                    <li>Aplicación con una sola mano en menos de 60 segundos.</li>
-                                    <li>Compatibilidad absoluta con guías TCCC / TECC.</li>
-                                    <li>Robusto, liviano y de empaque optimizado para terreno.</li>
-                                </ul>
+
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group row">
+                            <div class="col-half">
+                                <label for="f-nombre" data-i18n="form.name">Nombre y apellido</label>
+                                <input type="text" id="f-nombre" name="Nombre" class="form-control"
+                                    data-i18n-placeholder="form.namePh" placeholder="Ej. Juan Pérez" required
+                                    autocomplete="name">
                             </div>
-                            <div class="tab-visual">
-                                <img src="images/operacion-tactica.png" alt="Operación Táctica">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="tab-rcp">
-                        <div class="tab-grid">
-                            <div class="tab-text">
-                                <h3>Adjunto en RCP (T-CPR)</h3>
-                                <p>Incremento notable en la supervivencia al integrar el HemaShock™ durante las
-                                    maniobras de RCP, mejorando el retorno venoso y flujo hacia el cerebro y corazón.
-                                </p>
-                                <ul class="product-features mt-2">
-                                    <li>Eleva la presión sistólica y diastólica rápidamente.</li>
-                                    <li>Mejora la presión de perfusión coronaria (CPP).</li>
-                                    <li>Aumenta el flujo sanguíneo cerebral, limitando daño.</li>
-                                </ul>
-                            </div>
-                            <div class="tab-visual">
-                                <img src="images/rcp-avanzado.png" alt="RCP Avanzado">
+                            <div class="col-half">
+                                <label for="f-empresa" data-i18n="form.company">Empresa / Institución</label>
+                                <input type="text" id="f-empresa" name="Empresa" class="form-control"
+                                    data-i18n-placeholder="form.companyPh" placeholder="Ej. Hospital Municipal"
+                                    autocomplete="organization">
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane" id="tab-civil">
-                        <div class="tab-grid">
-                            <div class="tab-text">
-                                <h3>Primeros Respondientes</h3>
-                                <p>Equipamiento esencial para Bomberos, Defensa Civil y Paramédicos que enfrentan
-                                    incidentes con múltiples víctimas o escenarios complejos.</p>
-                                <ul class="product-features mt-2">
-                                    <li>Respuesta acelerada en modo "scoop and run".</li>
-                                    <li>Fácil entrenamiento con una curva de aprendizaje mínima.</li>
-                                    <li>Soporta períodos extendidos (120min) vigilando constantes vitales.</li>
-                                </ul>
+
+                        <div class="form-group row">
+                            <div class="col-half">
+                                <label for="f-email" data-i18n="form.email">Email</label>
+                                <input type="email" id="f-email" name="email" class="form-control"
+                                    data-i18n-placeholder="form.emailPh" placeholder="nombre@empresa.com" required
+                                    autocomplete="email">
                             </div>
-                            <div class="tab-visual">
-                                <img src="images/primeros-respondientes.png" alt="Primeros Respondientes">
+                            <div class="col-half">
+                                <label for="f-telefono" data-i18n="form.phone">Teléfono</label>
+                                <input type="tel" id="f-telefono" name="Teléfono" class="form-control"
+                                    placeholder="+54 9 11 1234-5678" autocomplete="tel">
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Capacitación y Nosotros -->
-    <section id="capacitacion" class="section">
-        <div class="container">
-            <div class="training-grid">
-                <div class="training-img fade-up">
-                    <img src="images/training.png" alt="Entrenamiento Médico Táctico">
-                    <div class="img-overlay"></div>
-                </div>
-                <div class="training-content fade-up stagger-1">
-                    <div class="badge">Centro de Entrenamiento</div>
-                    <h2>Capacitación <span class="text-olive">TCCC / TECC</span></h2>
-                    <p>En alianza con la Sociedad Argentina de Medicina Táctica (SAMT) y Australis Group / SETEC,
-                        BairesTac ofrece formación de élite al personal de primera línea.</p>
-
-                    <ul class="training-list mt-2">
-                        <li><strong>Cursos TCCC:</strong> Tactical Combat Casualty Care para entornos militares y
-                            especiales.</li>
-                        <li><strong>Cursos TECC:</strong> Tactical Emergency Casualty Care para respondedores
-                            civiles/policiales.</li>
-                        <li><strong>Control de Hemorragias:</strong> Básico y avanzado para seguridad física y civil.
-                        </li>
-                        <li><strong>Formación de Instructores:</strong> Programa de certificación oficial en el Cono
-                            Sur.</li>
-                    </ul>
-                    <a href="#contacto" class="btn-primary mt-2">Consultar Próximos Cursos</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header text-center fade-up">
-                <h2>Impacto Clínico Comprobado</h2>
-                <p>Números que demuestran la efectividad de nuestras soluciones en contextos reales.</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card fade-up stagger-1">
-                    <div class="stat-number">1.2M+</div>
-                    <div class="stat-label">Procedimientos Quirúrgicos</div>
-                    <p>Torniquetes HemaClear® utilizados globalmente en cirugía.</p>
-                </div>
-                <div class="stat-card fade-up stagger-2">
-                    <div class="stat-number">40%</div>
-                    <div class="stat-label">Reducción de Mortalidad</div>
-                    <p>En trauma severo con aplicación de HemaShock™ vs estándar.</p>
-                </div>
-                <div class="stat-card fade-up stagger-3">
-                    <div class="stat-number">30seg</div>
-                    <div class="stat-label">Tiempo de Acción</div>
-                    <p>HemaShock™ desplaza 1000cc de sangre en menos de 30 segundos.</p>
-                </div>
-                <div class="stat-card fade-up stagger-4">
-                    <div class="stat-number">95%</div>
-                    <div class="stat-label">Tasa de Éxito</div>
-                    <p>En estabilización hemodinámica pre-quirúrgica reportada en literatura.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Specs Section -->
-    <section class="section bg-card">
-        <div class="container">
-            <div class="section-header text-center fade-up">
-                <h2>Especificaciones <span class="text-orange">Técnicas</span></h2>
-                <p>Detalles de ingeniería de nuestros productos de clase mundial.</p>
-            </div>
-
-            <div class="specs-container fade-up">
-                <div class="specs-tabs">
-                    <button class="specs-tab-btn active" data-specs="specs-hemashock">HemaShock™ A-TT</button>
-                    <button class="specs-tab-btn" data-specs="specs-hemaclear">HemaClear® S-TT</button>
-                    <button class="specs-tab-btn" data-specs="specs-nar">SAM & NAR</button>
-                </div>
-
-                <div class="specs-content">
-                    <div class="specs-pane active" id="specs-hemashock">
-                        <h3>HemaShock™ Auto-Transfusion Tourniquet (A-TT)</h3>
-                        <div class="specs-details">
-                            <div class="spec-item">
-                                <div class="spec-label">Mecanismo</div>
-                                <p>Sistema de desplazamiento centrífugo de sangre con compresión externa controlada.</p>
+                        <div class="form-group row">
+                            <div class="col-half">
+                                <label for="f-pais" data-i18n="form.country">País</label>
+                                <select id="f-pais" name="País" class="form-control">
+                                    <option>Argentina</option>
+                                    <option>Chile</option>
+                                    <option>Uruguay</option>
+                                    <option>Paraguay</option>
+                                    <option>Bolivia</option>
+                                    <option data-i18n="form.countryBrazil">Brasil</option>
+                                    <option data-i18n="form.countryOther">Otro</option>
+                                </select>
                             </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Volumen Desplazado</div>
-                                <p>1.000 - 1.200 cc de sangre autóloga en <30 segundos.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Presión de Oclusión</div>
-                                <p>180-220 mmHg (arterial), titrables según necesidad clínica.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Tiempo de Seguridad</div>
-                                <p>Aplicación segura por hasta 120 minutos sin daño tisular.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Indicaciones Clínicas</div>
-                                <p>Shock hemorrágico, hipotensión severa, paro cardíaco + RCP, trauma penetrante exanguinante.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Certificaciones</div>
-                                <p>FDA 510(k), CE Mark, validación clínica en 18+ publicaciones peer-reviewed.</p>
+                            <div class="col-half">
+                                <label for="f-interes" data-i18n="form.interest">Interés principal</label>
+                                <select id="f-interes" name="Interés" class="form-control">
+                                    <option data-i18n="form.int1">Equipamiento médico</option>
+                                    <option data-i18n="form.int2">Capacitación y formación</option>
+                                    <option data-i18n="form.int3">Asesoramiento técnico</option>
+                                    <option data-i18n="form.int4">Oportunidad de distribución</option>
+                                    <option data-i18n="form.int5">Otra consulta</option>
+                                </select>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="specs-pane" id="specs-hemaclear">
-                        <h3>HemaClear® Surgical Tourniquet (S-TT)</h3>
-                        <div class="specs-details">
-                            <div class="spec-item">
-                                <div class="spec-label">Diseño</div>
-                                <p>Torniquete estéril de un solo uso, ergonómico y de rápida aplicación.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Campo Exsangüe</div>
-                                <p>Línea isquémica clara en <90 segundos, sin sangrado de bordes.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Material</div>
-                                <p>Silicona médica hypoalergénica, resistente a fluidos corporales y antisépticos.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Compatibilidad</div>
-                                <p>Extremidades superiores e inferiores; cirugía ortopédica, plástica y vascular.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Tiempo de Isquemia</div>
-                                <p>Seguro hasta 180 minutos en extremidades sin documentación de complicaciones.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Validación</div>
-                                <p>Utilizado en >1.2M de procedimientos; ISO 13485, CE Mark Class IIA.</p>
-                            </div>
+                        <div class="form-group">
+                            <label for="f-mensaje" data-i18n="form.message">Mensaje o consulta</label>
+                            <textarea id="f-mensaje" name="Mensaje" class="form-control" rows="4"
+                                data-i18n-placeholder="form.messagePh" placeholder="Escribí tu consulta..."
+                                required></textarea>
                         </div>
-                    </div>
 
-                    <div class="specs-pane" id="specs-nar">
-                        <h3>SAM Medical & North American Rescue (NAR)</h3>
-                        <div class="specs-details">
-                            <div class="spec-item">
-                                <div class="spec-label">Línea SAM</div>
-                                <p>SAM Splint, SAM XT, férulas de vacío y tablillas modulares para inmovilización.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Línea NAR</div>
-                                <p>Vendajes hemostáticos (Combat Gauze, Quick Clot), torniquetes CAT, kits C-TECC.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Algoritmos</div>
-                                <p>Compliance total con MARCH (Massive bleeding, Airway, Respiration, Circulation, Hypothermia) y PAWS.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Capacidad de Stock</div>
-                                <p>Disponibilidad en distribución directa y kits personalizados según protocolos institucionales.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Certificaciones</div>
-                                <p>Equipamiento estándar en operaciones militares OTAN, FBI-HRT, Marsoc, DEA-SRT.</p>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">Entrenamiento</div>
-                                <p>Cursos de aplicación rápida, compatibles con TCCC/TECC, <8 horas de capacitación.</p>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- Anti-spam: invisible para personas, tentador para bots -->
+                        <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off"
+                            aria-hidden="true">
+
+                        <button type="submit" class="btn-primary w-100 mt-2" id="submitBtn">
+                            <span class="btn-label" data-i18n="form.submit">Enviar consulta</span>
+                            <span class="btn-spinner" aria-hidden="true"></span>
+                        </button>
+
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Success Stories -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header text-center fade-up">
-                <h2>Casos de Éxito</h2>
-                <p>Historias reales de vidas salvadas en el Cono Sur.</p>
-            </div>
-
-            <div class="stories-grid">
-                <div class="story-card fade-up stagger-1">
-                    <div class="story-header">
-                        <div class="story-icon">🏥</div>
-                        <h3>Hospital Traumatológico Central</h3>
-                    </div>
-                    <p class="story-desc"><strong>Contexto:</strong> Trauma penetrante de tórax con shock hemorrágico refractario.</p>
-                    <p class="story-desc"><strong>Aplicación:</strong> HemaShock™ A-TT durante 45 minutos pre-quirúrgico.</p>
-                    <p class="story-result"><strong>Resultado:</strong> Paciente estabilizado, supervivencia y reinserción laboral completa. Evitó transfusión masiva.</p>
-                    <div class="story-location">Argentina - 2024</div>
-                </div>
-
-                <div class="story-card fade-up stagger-2">
-                    <div class="story-header">
-                        <div class="story-icon">🪖</div>
-                        <h3>Operación Táctica Combinada</h3>
-                    </div>
-                    <p class="story-desc"><strong>Contexto:</strong> Operador herido con hemorragia exanguinante de muslo.</p>
-                    <p class="story-desc"><strong>Aplicación:</strong> NAR CAT + Vendaje hemostático en teatro (CUF).</p>
-                    <p class="story-result"><strong>Resultado:</strong> Control de hemorragia en <3 minutos, evacuación segura, recuperación total sin amputación.</p>
-                    <div class="story-location">Región Sur - 2024</div>
-                </div>
-
-                <div class="story-card fade-up stagger-3">
-                    <div class="story-header">
-                        <div class="story-icon">🏨</div>
-                        <h3>Cirugía Ortopédica de Emergencia</h3>
-                    </div>
-                    <p class="story-desc"><strong>Contexto:</strong> Fractura expuesta con importantes daños vasculares.</p>
-                    <p class="story-desc"><strong>Aplicación:</strong> HemaClear® S-TT para campo exsangüe en quirófano.</p>
-                    <p class="story-result"><strong>Resultado:</strong> Procedimiento de 2.5h sin sangrado, preservación funcional completa de miembro.</p>
-                    <div class="story-location">Chile - 2024</div>
-                </div>
-
-                <div class="story-card fade-up stagger-4">
-                    <div class="story-header">
-                        <div class="story-icon">🚑</div>
-                        <h3>Respuesta Médica de Incidente Masivo</h3>
-                    </div>
-                    <p class="story-desc"><strong>Contexto:</strong> 8 víctimas de accidente vial con trauma severo múltiple.</p>
-                    <p class="story-desc"><strong>Aplicación:</strong> Kits NAR con vendajes hemostáticos y algoritmo MARCH.</p>
-                    <p class="story-result"><strong>Resultado:</strong> 100% de sobrevida en sitio y hospital, mejora de 4 puntos en scores de resiliencia.</p>
-                    <div class="story-location">Uruguay - 2024</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="section bg-card">
-        <div class="container">
-            <div class="section-header text-center fade-up">
-                <h2>Testimonios de Profesionales</h2>
-                <p>Expertos en medicina táctica y trauma comparten su experiencia.</p>
-            </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-up stagger-1">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"El HemaShock™ cambió nuestro protocolo de shock hemorrágico. La estabilización hemodinámica es inmediata. Hemos reducido nuestra mortalidad pre-quirúrgica un 35% en 18 meses."</p>
-                    <div class="testimonial-author">
-                        <strong>Dr. Carlos Mendoza</strong>
-                        <span>Jefe de Traumatología, Hospital Nacional</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card fade-up stagger-2">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Trabajamos con la línea NAR desde hace 5 años. La confiabilidad es impecable. Nuestros operadores están capacitados al 100% y responden con seguridad bajo presión extrema."</p>
-                    <div class="testimonial-author">
-                        <strong>Coronel Roberto Gutierrez</strong>
-                        <span>Fuerzas Especiales, Región Sur</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card fade-up stagger-3">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Los cursos TCCC/TECC de BairesTac son excelentes. Formadores certificados, contenido actualizado, y énfasis en la aplicabilidad real. Nuestro equipo se siente preparado."</p>
-                    <div class="testimonial-author">
-                        <strong>Paramedic Paula Rodríguez</strong>
-                        <span>Jefa de Paramédicos, Cuerpo de Bomberos</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card fade-up stagger-4">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"HemaClear® en nuestro quirófano es estándar. La velocidad de establecimiento del campo exsangüe es inigualable. Cero complicaciones en >500 procedimientos."</p>
-                    <div class="testimonial-author">
-                        <strong>Dra. Sofía Larsen</strong>
-                        <span>Cirujana Ortopédica, Centro Quirúrgico Privado</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header text-center fade-up">
-                <h2>Certificaciones y Validaciones <span class="text-orange">Internacionales</span></h2>
-                <p>Nuestros productos cumplen los más altos estándares de seguridad y eficacia globales.</p>
-            </div>
-
-            <div class="certifications-grid">
-                <div class="cert-card fade-up stagger-1">
-                    <div class="cert-icon">✓</div>
-                    <h3>FDA 510(k)</h3>
-                    <p>Aprobación de Dispositivo Médico de la Administración de Drogas y Alimentos de EE.UU. Conformidad con estándares de seguridad precomercialización.</p>
-                </div>
-                <div class="cert-card fade-up stagger-2">
-                    <div class="cert-icon">✓</div>
-                    <h3>CE Mark (Unión Europea)</h3>
-                    <p>Conformidad con Directiva de Dispositivos Médicos (MDR 2017/745). Auditoría independiente y validación clínica completa.</p>
-                </div>
-                <div class="cert-card fade-up stagger-3">
-                    <div class="cert-icon">✓</div>
-                    <h3>ISO 13485:2016</h3>
-                    <p>Sistema de Gestión de Calidad para Dispositivos Médicos. Trazabilidad, control de cambios y gestión de riesgos.</p>
-                </div>
-                <div class="cert-card fade-up stagger-4">
-                    <div class="cert-icon">✓</div>
-                    <h3>Publicaciones Clínicas</h3>
-                    <p>Respaldo científico en Journal of Trauma, Resuscitation, y Prehospital Emergency Care. 18+ estudios peer-reviewed.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section bg-card">
-        <div class="container">
-            <div class="section-header text-center fade-up">
-                <h2>Preguntas Frecuentes</h2>
-                <p>Resolvemos las dudas más comunes sobre nuestros productos y servicios.</p>
-            </div>
-
-            <div class="faq-container">
-                <div class="faq-item fade-up stagger-1">
-                    <button class="faq-question">
-                        <span>¿Cuál es la diferencia entre HemaShock™ y HemaClear®?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p><strong>HemaShock™ (A-TT)</strong> es un torniquete de emergencia que desplaza sangre autóloga masivamente para restaurar presión arterial en shock hemorrágico. <strong>HemaClear® (S-TT)</strong> es un torniquete quirúrgico estéril para crear un campo exsangüe durante cirugía. Usos completamente diferentes, ambos esenciales.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-up stagger-2">
-                    <button class="faq-question">
-                        <span>¿Cuánto tiempo puedo mantener el torniquete aplicado?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>HemaShock™: Seguro hasta 120 minutos sin riesgo de necrosis tisular. HemaClear®: Hasta 180 minutos en extremidades. Ambos productos incluyen protocolos de monitoreo de isquemia y cuidados post-aplicación.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-up stagger-3">
-                    <button class="faq-question">
-                        <span>¿Necesito entrenamiento especial para usar estos productos?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Sí. BairesTac ofrece cursos certificados TCCC/TECC de <8 horas para NAR y SAM. HemaShock™ requiere entrenamiento médico avanzado. Ofrecemos instructores in-situ y formación de capacitadores locales.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-up stagger-4">
-                    <button class="faq-question">
-                        <span>¿Cuáles son las contraindicaciones principales?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>HemaShock™: No usar en hipovolemia sin hemorragia activa, fallo cardíaco severo, o presión sistólica basal >160 mmHg. HemaClear®: No usar en isquemia preexistente o trastornos vasculares severos. Consulte siempre a su médico responsable.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-up stagger-1">
-                    <button class="faq-question">
-                        <span>¿Cómo es la logística de entrega en el Cono Sur?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Trabajamos con Australis Group y SETEC. Entregas en Argentina, Chile, Uruguay, Paraguay, Bolivia y Brasil en 5-10 días hábiles. Almacenes locales en principales ciudades. Transporte refrigerado para productos perecederos.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-up stagger-2">
-                    <button class="faq-question">
-                        <span>¿Ofrecen garantía o servicio técnico post-venta?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Sí. Garantía de 2 años contra defectos de fabricación. Línea de soporte técnico 24/7. Repuestos y mantenimiento disponibles. Auditoría de uso y reportes de eficacia para instituciones.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA & Aliados -->
-    <section id="contacto" class="section bg-card">
-        <div class="container text-center mb-4 fade-up">
-            <h2>Comunicate con Baires<span class="text-orange">Tac</span></h2>
-            <p>Distribuidores exclusivos para el Cono Sur. Soporte técnico y logística garantizada.</p>
-        </div>
-
-        <div class="container contact-grid fade-up stagger-1">
-            <div class="contact-info">
-                <h3>Por qué elegirnos</h3>
-                <ul class="why-us">
-                    <li><span class="icon-circle">✓</span> Distribución Oficial (Argentina a Brasil y más)</li>
-                    <li><span class="icon-circle">✓</span> Respaldo Técnico y Científico Especializado</li>
-                    <li><span class="icon-circle">✓</span> Certificaciones Pre-Market Internacionales (FDA / CE)</li>
-                    <li><span class="icon-circle">✓</span> Evidencia Clínica Globalmente Publicada</li>
-                    <li><span class="icon-circle">✓</span> Red Logística Robusta desarrollada con Australis Group</li>
-                </ul>
-
-                <div class="allies-block mt-4">
-                    <h4>Nuestros Aliados</h4>
-                    <div class="logos-grid small mt-2">
-                        <span class="brand-text">OHK Medical</span>
-                        <span class="brand-text">Australis Group</span>
-                        <span class="brand-text">SAMT</span>
-                    </div>
-                </div>
-            </div>
-
-            <form class="contact-form">
-                <div class="form-group row">
-                    <div class="col-half">
-                        <label>Nombre y Apellido</label>
-                        <input type="text" class="form-control" placeholder="Ej. Juan Pérez" required>
-                    </div>
-                    <div class="col-half">
-                        <label>Empresa / Institución</label>
-                        <input type="text" class="form-control" placeholder="Ej. Fuerzas Especiales" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-half">
-                        <label>País de Origen</label>
-                        <select class="form-control">
-                            <option>Argentina</option>
-                            <option>Chile</option>
-                            <option>Uruguay</option>
-                            <option>Paraguay</option>
-                            <option>Bolivia</option>
-                            <option>Brasil</option>
-                        </select>
-                    </div>
-                    <div class="col-half">
-                        <label>Interés Principal</label>
-                        <select class="form-control">
-                            <option>HemaShock™ / HemaClear®</option>
-                            <option>Insumos SAM / NAR</option>
-                            <option>Capacitación Formativa</option>
-                            <option>Oportunidad de Distribución</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Mensaje o Consulta Detallada</label>
-                    <textarea class="form-control" rows="4" placeholder="Escriba su consulta..."></textarea>
-                </div>
-                <button type="button" class="btn-primary w-100 mt-2">Enviar Solicitud</button>
-            </form>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
-                <a href="#" class="logo">
+                <a href="#inicio" class="logo">
                     <span class="logo-baires">Baires</span><span class="logo-tac">Tac</span>
                 </a>
-                <p class="mt-1 text-small">Liderando el control de hemorragia y medicina táctica en el Cono Sur.</p>
+                <p class="mt-1 text-small" data-i18n="footer.tagline">Soluciones integrales para la atención de
+                    emergencias, medicina táctica y control de hemorragias en el Cono Sur.</p>
             </div>
             <div class="footer-links">
-                &copy; 2026 BairesTac. Todos los derechos reservados.<br>
-                <a href="#">Política de Privacidad</a> | <a href="#">Términos Contractuales</a>
+                <span data-i18n="footer.rights">&copy; 2026 BairesTac. Todos los derechos reservados.</span><br>
+                <a href="mailto:bairestacsrl@gmail.com">bairestacsrl@gmail.com</a>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating button -->
-    <a href="https://wa.me/" class="whatsapp-float" aria-label="WhatsApp" target="_blank">
-        W
+    <!-- WhatsApp -->
+    <a href="https://wa.me/5491100000000" class="whatsapp-float" id="waFloat" target="_blank" rel="noopener"
+        data-i18n-aria-label="a11y.whatsapp" aria-label="Escribinos por WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path
+                d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.3c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.3 8.3 0 1 1 7.2 3.9z" />
+        </svg>
     </a>
 
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 
