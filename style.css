@@ -1874,3 +1874,401 @@ textarea.form-control {
         height: 52px;
     }
 }
+
+/* =========================================================
+   Tienda (productos.html)
+   La foto de producto vive sobre un panel claro, como en
+   cualquier catálogo: el producto recortado sobre fondo
+   blanco se pierde si lo ponemos sobre el oscuro de la marca.
+   ========================================================= */
+
+.store-header {
+    padding: 140px 0 var(--sp-7);
+    background:
+        radial-gradient(1100px 420px at 12% -10%, rgba(242, 92, 5, 0.13), transparent 60%),
+        var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: var(--sp-5);
+    transition: color var(--transition-fast);
+}
+
+.back-link:hover {
+    color: var(--accent-orange);
+}
+
+.store-header h1 {
+    font-size: clamp(2.25rem, 4.6vw, 3.5rem);
+    margin-bottom: var(--sp-4);
+}
+
+.store-lead {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 64ch;
+}
+
+.store-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-5);
+    list-style: none;
+    margin-top: var(--sp-6);
+    padding-top: var(--sp-5);
+    border-top: 1px solid var(--border-color);
+}
+
+.store-badges li {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.store-badges .icon {
+    color: var(--accent-olive-text);
+}
+
+.section--store {
+    padding-top: var(--sp-8);
+}
+
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: var(--sp-5);
+}
+
+.store-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.store-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-orange-line);
+    box-shadow: var(--shadow-lg);
+}
+
+.store-media {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background-color: #EEF1F4;
+    overflow: hidden;
+}
+
+.store-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.store-card:hover .store-media img {
+    transform: scale(1.04);
+}
+
+.store-tag {
+    position: absolute;
+    top: var(--sp-3);
+    left: var(--sp-3);
+    background-color: var(--accent-orange);
+    color: var(--text-on-accent);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: var(--sp-1) var(--sp-3);
+    border-radius: var(--r-sm);
+}
+
+.store-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: var(--sp-5);
+}
+
+.store-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: var(--sp-3);
+}
+
+.store-short {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin-bottom: var(--sp-5);
+}
+
+.store-price {
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-2);
+    margin-top: auto;
+    padding-top: var(--sp-4);
+    border-top: 1px solid var(--border-color);
+}
+
+.price-amount {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text-main);
+}
+
+.price-currency {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-faint);
+}
+
+.store-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-3);
+    margin-top: var(--sp-4);
+}
+
+.store-actions .btn-primary-outline,
+.store-actions .btn-whatsapp {
+    padding: var(--sp-3) var(--sp-3);
+    font-size: 0.9rem;
+}
+
+/* Aviso de cómo se compra */
+.store-note {
+    display: flex;
+    gap: var(--sp-5);
+    align-items: flex-start;
+    margin-top: var(--sp-8);
+    padding: clamp(24px, 3.5vw, 40px);
+    background: linear-gradient(120deg, rgba(37, 211, 102, 0.09) 0%, rgba(242, 92, 5, 0.06) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: var(--r-lg);
+}
+
+.store-note .icon-md {
+    color: var(--wa-green);
+    margin-top: 4px;
+}
+
+.store-note h2 {
+    font-size: 1.3rem;
+    margin-bottom: var(--sp-3);
+}
+
+.store-note p {
+    color: var(--text-muted);
+    max-width: 72ch;
+}
+
+.store-note strong {
+    color: var(--text-main);
+}
+
+/* ---------- Ficha de producto ---------- */
+.pd-modal {
+    width: min(1000px, calc(100vw - 32px));
+    max-height: calc(100vh - 64px);
+    padding: 0;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--r-lg);
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+
+.pd-modal::backdrop {
+    background-color: rgba(8, 9, 12, 0.78);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.pd-close {
+    position: sticky;
+    top: var(--sp-3);
+    float: right;
+    z-index: 2;
+    margin: var(--sp-3) var(--sp-3) 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-elevated);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.pd-close:hover {
+    background-color: var(--accent-orange);
+    color: var(--text-on-accent);
+    border-color: var(--accent-orange);
+}
+
+.pd {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(20px, 3vw, 40px);
+    padding: clamp(20px, 3vw, 40px);
+}
+
+.pd[hidden] {
+    display: none;
+}
+
+.pd-gallery {
+    position: sticky;
+    top: var(--sp-5);
+    align-self: start;
+}
+
+.pd-main {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-color: #EEF1F4;
+    border-radius: var(--r-md);
+}
+
+.pd-thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    margin-top: var(--sp-3);
+}
+
+.pd-thumb {
+    width: 62px;
+    height: 62px;
+    padding: 0;
+    background-color: #EEF1F4;
+    border: 2px solid transparent;
+    border-radius: var(--r-sm);
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color var(--transition-fast), opacity var(--transition-fast);
+    opacity: 0.65;
+}
+
+.pd-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pd-thumb:hover {
+    opacity: 1;
+}
+
+.pd-thumb.is-active {
+    border-color: var(--accent-orange);
+    opacity: 1;
+}
+
+.pd-info h2 {
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    margin-bottom: var(--sp-3);
+}
+
+.pd-info .store-price {
+    margin: 0 0 var(--sp-5);
+    padding-top: 0;
+    border-top: none;
+}
+
+.pd-info h3 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-orange);
+    margin: var(--sp-6) 0 var(--sp-3);
+}
+
+.pd-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--sp-4);
+}
+
+.pd-list {
+    list-style: none;
+    display: grid;
+    gap: var(--sp-3);
+}
+
+.pd-list li {
+    position: relative;
+    padding-left: var(--sp-5);
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.pd-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-orange);
+    border-radius: 50%;
+}
+
+.pd-list--plain li::before {
+    background-color: var(--accent-olive-text);
+}
+
+.pd-list strong {
+    color: var(--text-main);
+}
+
+@media (max-width: 860px) {
+    .pd {
+        grid-template-columns: 1fr;
+    }
+
+    .pd-gallery {
+        position: static;
+    }
+
+    .store-note {
+        flex-direction: column;
+        gap: var(--sp-4);
+    }
+}
+
+@media (max-width: 420px) {
+    .store-actions {
+        grid-template-columns: 1fr;
+    }
+}

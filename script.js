@@ -2,7 +2,7 @@
    Va sin "+", espacios ni guiones, que es como lo espera wa.me.
    Si cambia el número hay que actualizarlo también en los dos enlaces
    de index.html (la sección Contacto y el botón flotante). */
-const WHATSAPP_NUMBER = '5492323485301';
+const WHATSAPP_NUMBER = '5491132967109';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -113,6 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
        da el último toque de enviar desde su propia cuenta. */
     const form = document.getElementById('contactForm');
     const statusEl = document.getElementById('formStatus');
+
+    // productos.html reutiliza este archivo y no tiene formulario de contacto.
+    if (!form) return;
 
     const showStatus = (messageKey, state) => {
         statusEl.textContent = t(messageKey);

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="store.metaTitle">Productos | BairesTac</title>
+    <meta name="description" data-i18n-content="store.metaDescription"
+        content="Equipamiento de control de hemorragias y medicina táctica: kits de trauma, torniquetes SAM XT, vendajes israelíes y gasas hemostáticas. Consultá y comprá por WhatsApp.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido principal</a>
+
+    <svg class="svg-defs" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <symbol id="i-wa" viewBox="0 0 24 24">
+                <path
+                    d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.3c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.3 8.3 0 1 1 7.2 3.9z" />
+            </symbol>
+            <symbol id="i-arrow-left" viewBox="0 0 24 24">
+                <path d="M19 12H5M11 18l-6-6 6-6" />
+            </symbol>
+            <symbol id="i-close" viewBox="0 0 24 24">
+                <path d="M18 6 6 18M6 6l12 12" />
+            </symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24">
+                <path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z" />
+                <path d="m9 12 2 2 4-4" />
+            </symbol>
+            <symbol id="i-truck" viewBox="0 0 24 24">
+                <path d="M2 17V7a1 1 0 0 1 1-1h11v11" />
+                <path d="M14 10h4l3 3v4h-7" />
+                <circle cx="7" cy="18" r="2" />
+                <circle cx="17" cy="18" r="2" />
+            </symbol>
+            <symbol id="i-chat" viewBox="0 0 24 24">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <span class="logo-baires">Baires</span><span class="logo-tac">Tac</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#inicio" data-i18n="nav.inicio">Inicio</a></li>
+                <li><a href="index.html#nosotros" data-i18n="nav.nosotros">Nosotros</a></li>
+                <li><a href="index.html#soluciones" data-i18n="nav.soluciones">Soluciones</a></li>
+                <li><a href="index.html#portafolio" data-i18n="nav.portafolio">Portafolio</a></li>
+                <li><a href="productos.html" class="is-current" aria-current="page"
+                        data-i18n="nav.productos">Productos</a></li>
+                <li><a href="index.html#ambitos" data-i18n="nav.ambitos">Ámbitos</a></li>
+                <li><a href="index.html#capacitacion" data-i18n="nav.capacitacion">Capacitación</a></li>
+                <li><a href="index.html#contacto" data-i18n="nav.contacto">Contacto</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="lang-switch" role="group" data-i18n-aria-label="a11y.langGroup"
+                    aria-label="Seleccionar idioma">
+                    <button type="button" class="lang-btn is-active" data-lang="es" aria-pressed="true"
+                        lang="es">ES</button>
+                    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" lang="en">EN</button>
+                </div>
+
+                <button class="hamburger" id="hamburger" type="button" aria-expanded="false" aria-controls="navLinks"
+                    data-i18n-aria-label="a11y.menu" aria-label="Abrir menú de navegación">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+        <!-- Encabezado de la tienda -->
+        <header class="store-header">
+            <div class="container">
+                <a href="index.html" class="back-link">
+                    <svg class="icon icon-sm" aria-hidden="true">
+                        <use href="#i-arrow-left" />
+                    </svg>
+                    <span data-i18n="store.back">Volver al inicio</span>
+                </a>
+
+                <span class="eyebrow" data-i18n="store.eyebrow">Tienda</span>
+                <h1 data-i18n="store.title">Productos <span class="text-orange">disponibles</span></h1>
+                <p class="store-lead" data-i18n="store.lead">Equipamiento original de control de hemorragias y medicina
+                    táctica, con stock en Argentina. Elegí el producto y coordinamos la compra por WhatsApp: te
+                    confirmamos disponibilidad, formas de pago y envío.</p>
+
+                <ul class="store-badges">
+                    <li>
+                        <svg class="icon icon-sm" aria-hidden="true">
+                            <use href="#i-shield" />
+                        </svg>
+                        <span data-i18n="store.badge1">Insumos originales</span>
+                    </li>
+                    <li>
+                        <svg class="icon icon-sm" aria-hidden="true">
+                            <use href="#i-truck" />
+                        </svg>
+                        <span data-i18n="store.badge2">Envíos a todo el país</span>
+                    </li>
+                    <li>
+                        <svg class="icon icon-sm" aria-hidden="true">
+                            <use href="#i-chat" />
+                        </svg>
+                        <span data-i18n="store.badge3">Asesoramiento antes de comprar</span>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- Grilla de productos -->
+        <section class="section section--store">
+            <div class="container">
+                <div class="store-grid">
+
+                    <!-- Pouch Táctico -->
+                    <article class="store-card fade-up">
+                        <div class="store-media">
+                            <img src="images/productos/pouch-baires-tac.jpg" width="1100" height="1100"
+                                alt="Kit de Trauma Pouch BAIRES TAC abierto, con torniquete, vendaje y gasa a la vista"
+                                loading="lazy">
+                            <span class="store-tag" data-i18n="store.tagKit">Kit completo</span>
+                        </div>
+                        <div class="store-body">
+                            <h2 class="store-name">Kit de Trauma Pouch BAIRES TAC</h2>
+                            <p class="store-short" data-i18n="prod.pouch.short">Botiquín individual (IFAK) con insumos
+                                de estándar internacional para responder de inmediato ante hemorragias graves, heridas
+                                traumáticas e hipotermia.</p>
+                            <div class="store-price">
+                                <span class="price-amount">$265.000</span>
+                                <span class="price-currency">ARS</span>
+                            </div>
+                            <div class="store-actions">
+                                <button type="button" class="btn-primary-outline btn-detail" data-pd="pouch"
+                                    data-i18n="store.detail">Ver detalle</button>
+                                <button type="button" class="btn-whatsapp btn-buy"
+                                    data-name="Kit de Trauma Pouch BAIRES TAC" data-price="$265.000 ARS">
+                                    <svg class="icon-brand" aria-hidden="true">
+                                        <use href="#i-wa" />
+                                    </svg>
+                                    <span data-i18n="store.buy">Comprar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Bleeding Control Kit SAM -->
+                    <article class="store-card fade-up stagger-1">
+                        <div class="store-media">
+                            <img src="images/productos/kit-bleeding-control.jpg" width="1100" height="1100"
+                                alt="SAM Medical Bleeding Control Kit con su empaque rojo y todo su contenido desplegado"
+                                loading="lazy">
+                            <span class="store-tag" data-i18n="store.tagKit">Kit completo</span>
+                        </div>
+                        <div class="store-body">
+                            <h2 class="store-name">SAM Medical Bleeding Control Kit</h2>
+                            <p class="store-short" data-i18n="prod.kit.short">Sistema compacto y listo para usar ante
+                                hemorragias graves, armado bajo los estándares internacionales del programa Stop the
+                                Bleed.</p>
+                            <div class="store-price">
+                                <span class="price-amount">$170.000</span>
+                                <span class="price-currency">ARS</span>
+                            </div>
+                            <div class="store-actions">
+                                <button type="button" class="btn-primary-outline btn-detail" data-pd="kit"
+                                    data-i18n="store.detail">Ver detalle</button>
+                                <button type="button" class="btn-whatsapp btn-buy"
+                                    data-name="SAM Medical Bleeding Control Kit" data-price="$170.000 ARS">
+                                    <svg class="icon-brand" aria-hidden="true">
+                                        <use href="#i-wa" />
+                                    </svg>
+                                    <span data-i18n="store.buy">Comprar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Torniquete SAM XT -->
+                    <article class="store-card fade-up stagger-2">
+                        <div class="store-media">
+                            <img src="images/productos/torniquete-sam-xt.jpg" width="1100" height="1100"
+                                alt="Torniquete de extremidades SAM XT con hebilla TRUFORCE y varilla de aluminio"
+                                loading="lazy">
+                        </div>
+                        <div class="store-body">
+                            <h2 class="store-name">Torniquete SAM XT</h2>
+                            <p class="store-short" data-i18n="prod.torniquete.short">Torniquete táctico de última
+                                generación para detener hemorragias graves en extremidades. Recomendado por el
+                                CoTCCC.</p>
+                            <div class="store-price">
+                                <span class="price-amount">$120.000</span>
+                                <span class="price-currency">ARS</span>
+                            </div>
+                            <div class="store-actions">
+                                <button type="button" class="btn-primary-outline btn-detail" data-pd="torniquete"
+                                    data-i18n="store.detail">Ver detalle</button>
+                                <button type="button" class="btn-whatsapp btn-buy" data-name="Torniquete SAM XT"
+                                    data-price="$120.000 ARS">
+                                    <svg class="icon-brand" aria-hidden="true">
+                                        <use href="#i-wa" />
+                                    </svg>
+                                    <span data-i18n="store.buy">Comprar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Vendaje Israelí -->
+                    <article class="store-card fade-up stagger-3">
+                        <div class="store-media">
+                            <img src="images/productos/vendaje-israeli.jpg" width="1100" height="1100"
+                                alt="Vendaje israelí Safeguard Medical The Emergency Bandage de 4 pulgadas en su empaque sellado"
+                                loading="lazy">
+                        </div>
+                        <div class="store-body">
+                            <h2 class="store-name">Vendaje Israelí Safeguard 4"</h2>
+                            <p class="store-short" data-i18n="prod.vendaje.short">El vendaje israelí original de
+                                Safeguard Medical (FCP-01), el estándar más usado en botiquines individuales para
+                                extremidades.</p>
+                            <div class="store-price">
+                                <span class="price-amount">$22.000</span>
+                                <span class="price-currency">ARS</span>
+                            </div>
+                            <div class="store-actions">
+                                <button type="button" class="btn-primary-outline btn-detail" data-pd="vendaje"
+                                    data-i18n="store.detail">Ver detalle</button>
+                                <button type="button" class="btn-whatsapp btn-buy"
+                                    data-name="Vendaje Israelí Safeguard 4&quot; (FCP-01)" data-price="$22.000 ARS">
+                                    <svg class="icon-brand" aria-hidden="true">
+                                        <use href="#i-wa" />
+                                    </svg>
+                                    <span data-i18n="store.buy">Comprar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Gasa Comprimida NAR -->
+                    <article class="store-card fade-up stagger-4">
+                        <div class="store-media">
+                            <img src="images/productos/gasa-nar.jpg" width="1100" height="1100"
+                                alt="Gasa comprimida estéril North American Rescue en su empaque sellado al vacío"
+                                loading="lazy">
+                        </div>
+                        <div class="store-body">
+                            <h2 class="store-name">Gasa Comprimida NAR</h2>
+                            <p class="store-short" data-i18n="prod.gasa.short">Rollo ultracompacto de gasa estéril de
+                                algodón para el empaquetamiento de heridas profundas y el control de hemorragias
+                                graves.</p>
+                            <div class="store-price">
+                                <span class="price-amount">$14.500</span>
+                                <span class="price-currency">ARS</span>
+                            </div>
+                            <div class="store-actions">
+                                <button type="button" class="btn-primary-outline btn-detail" data-pd="gasa"
+                                    data-i18n="store.detail">Ver detalle</button>
+                                <button type="button" class="btn-whatsapp btn-buy" data-name="Gasa Comprimida NAR"
+                                    data-price="$14.500 ARS">
+                                    <svg class="icon-brand" aria-hidden="true">
+                                        <use href="#i-wa" />
+                                    </svg>
+                                    <span data-i18n="store.buy">Comprar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Aclaración honesta sobre cómo se compra -->
+                <aside class="store-note fade-up">
+                    <svg class="icon icon-md" aria-hidden="true">
+                        <use href="#i-chat" />
+                    </svg>
+                    <div>
+                        <h2 data-i18n="store.noteTitle">¿Cómo se compra?</h2>
+                        <p data-i18n="store.noteText">Todavía no hay pago online. Al tocar <strong>Comprar</strong> se
+                            abre WhatsApp con tu consulta ya escrita y desde ahí coordinamos disponibilidad, forma de
+                            pago y envío. Si necesitás cantidades para una institución o un armado a medida,
+                            escribinos y lo cotizamos.</p>
+                        <a class="btn-whatsapp btn-buy mt-2" href="#" data-name="" data-price=""
+                            data-i18n-aria-label="store.noteCta" aria-label="Escribir por WhatsApp">
+                            <svg class="icon-brand" aria-hidden="true">
+                                <use href="#i-wa" />
+                            </svg>
+                            <span data-i18n="store.noteCta">Escribinos por WhatsApp</span>
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <!-- Ficha de producto -->
+    <dialog class="pd-modal" id="productModal" data-i18n-aria-label="store.detailDialog"
+        aria-label="Detalle del producto">
+        <button type="button" class="pd-close" id="pdClose" data-i18n-aria-label="store.close" aria-label="Cerrar">
+            <svg class="icon icon-md" aria-hidden="true">
+                <use href="#i-close" />
+            </svg>
+        </button>
+
+        <div class="pd-body">
+
+            <!-- Pouch -->
+            <div class="pd" data-pd="pouch" hidden>
+                <div class="pd-gallery">
+                    <img class="pd-main" src="images/productos/pouch-baires-tac.jpg" alt="Kit de Trauma Pouch BAIRES TAC">
+                    <div class="pd-thumbs">
+                        <button type="button" class="pd-thumb is-active"><img
+                                src="images/productos/pouch-baires-tac.jpg" alt="Pouch abierto con su contenido"></button>
+                        <button type="button" class="pd-thumb"><img src="images/productos/pouch-baires-tac-2.jpg"
+                                alt="Pouch cerrado de frente"></button>
+                        <button type="button" class="pd-thumb"><img src="images/productos/pouch-baires-tac-3.jpg"
+                                alt="Pouch desplegado en vertical"></button>
+                        <button type="button" class="pd-thumb"><img src="images/productos/pouch-baires-tac-4.jpg"
+                                alt="Pouch cerrado en ángulo"></button>
+                    </div>
+                </div>
+                <div class="pd-info">
+                    <h2>Kit de Trauma Pouch BAIRES TAC</h2>
+                    <div class="store-price"><span class="price-amount">$265.000</span><span
+                            class="price-currency">ARS</span></div>
+                    <p data-i18n="prod.pouch.d1">El Kit de Trauma Pouch BAIRES TAC es un botiquín individual de primeros
+                        auxilios (IFAK) configurado con insumos médicos de estándar internacional, diseñado para
+                        responder de forma inmediata ante hemorragias graves, heridas traumáticas e hipotermia en
+                        situaciones críticas.</p>
+                    <p data-i18n="prod.pouch.d2">Ideal para fuerzas de seguridad, rescatistas, personal industrial,
+                        actividades outdoor, tiro deportivo y prevención vehicular.</p>
+                    <ul class="pd-list">
+                        <li><strong data-i18n="prod.pouch.f1t">Insumos originales de grado táctico:</strong> <span
+                                data-i18n="prod.pouch.f1d">combina componentes líderes en medicina prehospitalaria (SAM
+                                Medical, North American Rescue y Safeguard Medical) avalados por los protocolos
+                                internacionales Stop the Bleed y CoTCCC.</span></li>
+                        <li><strong data-i18n="prod.pouch.f2t">Todo en un solo lugar:</strong> <span
+                                data-i18n="prod.pouch.f2d">reúne en un formato compacto y organizado las herramientas
+                                exactas para cortar ropa, detener sangrados masivos en extremidades o zonas de unión y
+                                prevenir el shock térmico.</span></li>
+                        <li><strong data-i18n="prod.pouch.f3t">Listo para desplegar:</strong> <span
+                                data-i18n="prod.pouch.f3d">su pouch táctico permite un acceso rápido y transporte
+                                seguro en cinturones, mochilas con sistema MOLLE o en el vehículo.</span></li>
+                    </ul>
+                    <h3 data-i18n="store.contains">Contenido</h3>
+                    <ul class="pd-list">
+                        <li><strong>1 Torniquete SAM XT Original (SAM Medical):</strong> <span
+                                data-i18n="prod.pouch.c1">con hebilla TRUFORCE™ de auto-bloqueo y clic audible que
+                                asegura la tensión correcta antes de girar su varilla de aluminio aeronáutico.</span>
+                        </li>
+                        <li><strong>1 Vendaje Israelí de 4" (Safeguard Medical FCP-01):</strong> <span
+                                data-i18n="prod.pouch.c2">vendaje compresivo todo en uno con apósito estéril no
+                                adherente y aplicador de presión integrado.</span></li>
+                        <li><strong>1 Gasa Comprimida Estéril (North American Rescue):</strong> <span
+                                data-i18n="prod.pouch.c3">rollo ultracompacto de algodón 100 % (6 capas) sellado al
+                                vacío, ideal para el empaquetamiento de heridas profundas.</span></li>
+                        <li><strong data-i18n="prod.pouch.c4t">1 Tijera de Trauma:</strong> <span
+                                data-i18n="prod.pouch.c4">de acero inoxidable con punta roma de seguridad para cortar
+                                ropa gruesa, cinturones o calzado sin lastimar al paciente.</span></li>
+                        <li><strong data-i18n="prod.pouch.c5t">1 Manta Térmica de Emergencia:</strong> <span
+                                data-i18n="prod.pouch.c5">aluminizada y ultracompacta para conservar el calor corporal
+                                y prevenir la hipotermia post-trauma.</span></li>
+                        <li><strong data-i18n="prod.pouch.c6t">1 Pouch Táctico "Huemul":</strong> <span
+                                data-i18n="prod.pouch.c6">resistente y de acceso rápido para mantener todo el equipo
+                                protegido y ordenado.</span></li>
+                    </ul>
+                    <button type="button" class="btn-whatsapp btn-buy w-100 mt-2"
+                        data-name="Kit de Trauma Pouch BAIRES TAC" data-price="$265.000 ARS">
+                        <svg class="icon-brand" aria-hidden="true">
+                            <use href="#i-wa" />
+                        </svg>
+                        <span data-i18n="store.buy">Comprar</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bleeding Control Kit -->
+            <div class="pd" data-pd="kit" hidden>
+                <div class="pd-gallery">
+                    <img class="pd-main" src="images/productos/kit-bleeding-control.jpg"
+                        alt="SAM Medical Bleeding Control Kit">
+                    <div class="pd-thumbs">
+                        <button type="button" class="pd-thumb is-active"><img
+                                src="images/productos/kit-bleeding-control.jpg" alt="Kit con su contenido desplegado"></button>
+                        <button type="button" class="pd-thumb"><img src="images/productos/kit-bleeding-control-2.jpg"
+                                alt="Empaque del kit de frente"></button>
+                        <button type="button" class="pd-thumb"><img src="images/productos/kit-bleeding-control-3.jpg"
+                                alt="Empaque del kit en ángulo"></button>
+                    </div>
+                </div>
+                <div class="pd-info">
+                    <h2>SAM Medical Bleeding Control Kit</h2>
+                    <div class="store-price"><span class="price-amount">$170.000</span><span
+                            class="price-currency">ARS</span></div>
+                    <p data-i18n="prod.kit.d1">El SAM Medical Bleeding Control Kit es un sistema compacto y listo para
+                        usar, diseñado para responder de forma rápida y efectiva ante hemorragias graves en situaciones
+                        de emergencia. Diseñado bajo los estándares internacionales del programa Stop the Bleed, reúne
+                        los insumos esenciales para salvar vidas antes de la llegada de los servicios médicos.</p>
+                    <ul class="pd-list">
+                        <li><strong data-i18n="prod.kit.f1t">Acción rápida e intuitiva:</strong> <span
+                                data-i18n="prod.kit.f1d">incluye el torniquete original SAM XT (aprobado por el
+                                CoTCCC), equipado con hebilla TRUFORCE que bloquea automáticamente la tensión correcta
+                                mediante un clic audible, reduciendo errores por estrés.</span></li>
+                        <li><strong data-i18n="prod.kit.f2t">Diseño ultracompacto:</strong> <span
+                                data-i18n="prod.kit.f2d">viene en un empaque sellado y resistente, ideal para llevar en
+                                mochilas tácticas, guanteras de vehículos, botiquines de trabajo o espacios
+                                públicos.</span></li>
+                        <li><strong data-i18n="prod.kit.f3t">Equipamiento integral:</strong> <span
+                                data-i18n="prod.kit.f3d">cuenta con todo lo necesario para aplicar torniquetes,
+                                empaquetar heridas profundas y ejercer presión directa de manera segura.</span></li>
+                    </ul>
+                    <h3 data-i18n="store.contains">Contenido</h3>
+                    <ul class="pd-list pd-list--plain">
+                        <li data-i18n="prod.kit.c1">1 Torniquete de extremidades SAM XT original.</li>
+                        <li data-i18n="prod.kit.c2">1 Vendaje compresivo de emergencia (6 pulgadas).</li>
+                        <li data-i18n="prod.kit.c3">1 Gasa comprimida estéril para empaquetamiento de heridas.</li>
+                        <li data-i18n="prod.kit.c4">1 Tijera de trauma de acero inoxidable.</li>
+                        <li data-i18n="prod.kit.c5">1 Par de guantes de nitrilo (libres de látex).</li>
+                        <li data-i18n="prod.kit.c6">1 Marcador permanente para registrar la hora de aplicación.</li>
+                        <li data-i18n="prod.kit.c7">1 Tarjeta de instrucciones rápidas ilustradas.</li>
+                    </ul>
+                    <button type="button" class="btn-whatsapp btn-buy w-100 mt-2"
+                        data-name="SAM Medical Bleeding Control Kit" data-price="$170.000 ARS">
+                        <svg class="icon-brand" aria-hidden="true">
+                            <use href="#i-wa" />
+                        </svg>
+                        <span data-i18n="store.buy">Comprar</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Torniquete SAM XT -->
+            <div class="pd" data-pd="torniquete" hidden>
+                <div class="pd-gallery">
+                    <img class="pd-main" src="images/productos/torniquete-sam-xt.jpg" alt="Torniquete SAM XT">
+                    <div class="pd-thumbs">
+                        <button type="button" class="pd-thumb is-active"><img
+                                src="images/productos/torniquete-sam-xt.jpg" alt="Torniquete SAM XT completo"></button>
+                        <button type="button" class="pd-thumb"><img src="images/productos/torniquete-sam-xt-2.jpg"
+                                alt="Torniquete SAM XT en su empaque"></button>
+                        <button type="button" class="pd-thumb"><img src="images/productos/torniquete-sam-xt-3.jpg"
+                                alt="Torniquete SAM XT aplicado sobre el brazo"></button>
+                    </div>
+                </div>
+                <div class="pd-info">
+                    <h2>Torniquete SAM XT</h2>
+                    <div class="store-price"><span class="price-amount">$120.000</span><span
+                            class="price-currency">ARS</span></div>
+                    <p data-i18n="prod.torniquete.d1">El SAM XT Extremity Tourniquet es un torniquete táctico de última
+                        generación diseñado por SAM Medical para detener hemorragias graves en extremidades de forma
+                        rápida, intuitiva y con menos vueltas de varilla que los modelos tradicionales. Está recomendado
+                        por el Comité de Atención Táctica a Heridos en Combate (CoTCCC).</p>
+                    <ul class="pd-list">
+                        <li><strong data-i18n="prod.torniquete.f1t">Hebilla TRUFORCE™ con auto-bloqueo:</strong> <span
+                                data-i18n="prod.torniquete.f1d">elimina la holgura inicial, principal causa de fallo en
+                                torniquetes, bloqueándose automáticamente con un clic audible cuando se alcanza la
+                                fuerza de tracción óptima antes de girar la varilla.</span></li>
+                        <li><strong data-i18n="prod.torniquete.f2t">Sistema de cierre TRUFLEX™:</strong> <span
+                                data-i18n="prod.torniquete.f2d">correa de nylon resistente a todo clima con orificios
+                                perforados a intervalos regulares donde encajan las puntas de la hebilla, evitando
+                                deslizamientos o aflojamientos por sangre, barro o agua.</span></li>
+                        <li><strong data-i18n="prod.torniquete.f3t">Varilla de grado aeronáutico:</strong> <span
+                                data-i18n="prod.torniquete.f3d">aluminio anodizado 6061-T6 con relieve antideslizante
+                                para lograr un torque máximo sin riesgo de flexión o rotura.</span></li>
+                        <li><strong data-i18n="prod.torniquete.f4t">Aplicación rápida en un solo sentido:</strong>
+                            <span data-i18n="prod.torniquete.f4d">su diseño intuitivo permite colocarlo con una sola
+                                mano (autoaplicación) o con dos manos en cuestión de segundos.</span></li>
+                    </ul>
+                    <h3 data-i18n="store.specs">Especificaciones</h3>
+                    <ul class="pd-list pd-list--plain">
+                        <li><strong data-i18n="prod.spec.weight">Peso:</strong> 108 g</li>
+                        <li><strong data-i18n="prod.torniquete.s2t">Circunferencia de uso:</strong> <span
+                                data-i18n="prod.torniquete.s2">se adapta a extremidades desde 13,9 cm hasta 88,9
+                                cm.</span></li>
+                        <li><strong data-i18n="prod.spec.materials">Materiales:</strong> <span
+                                data-i18n="prod.torniquete.s3">aluminio 6061-T6 y nylon balístico resistente a
+                                temperaturas extremas y humedad.</span></li>
+                    </ul>
+                    <button type="button" class="btn-whatsapp btn-buy w-100 mt-2" data-name="Torniquete SAM XT"
+                        data-price="$120.000 ARS">
+                        <svg class="icon-brand" aria-hidden="true">
+                            <use href="#i-wa" />
+                        </svg>
+                        <span data-i18n="store.buy">Comprar</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Vendaje Israelí -->
+            <div class="pd" data-pd="vendaje" hidden>
+                <div class="pd-gallery">
+                    <img class="pd-main" src="images/productos/vendaje-israeli.jpg"
+                        alt="Vendaje israelí Safeguard de 4 pulgadas">
+                    <div class="pd-thumbs">
+                        <button type="button" class="pd-thumb is-active"><img
+                                src="images/productos/vendaje-israeli.jpg" alt="Vendaje israelí en su empaque"></button>
+                    </div>
+                </div>
+                <div class="pd-info">
+                    <h2>Vendaje Israelí Safeguard 4"</h2>
+                    <div class="store-price"><span class="price-amount">$22.000</span><span
+                            class="price-currency">ARS</span></div>
+                    <p data-i18n="prod.vendaje.d1">El modelo más chico de la línea estándar del vendaje israelí original
+                        de Safeguard Medical (anteriormente comercializado bajo PerSys Medical / First Care Products) es
+                        The Emergency Bandage™ de 4 pulgadas (10 cm), identificado con el código FCP-01. Es el estándar
+                        más utilizado en botiquines individuales (IFAK) para extremidades y heridas pediátricas.</p>
+                    <h3 data-i18n="store.specs">Especificaciones</h3>
+                    <ul class="pd-list pd-list--plain">
+                        <li><strong data-i18n="prod.vendaje.s1t">Ancho de la venda:</strong> 10 cm</li>
+                        <li><strong data-i18n="prod.vendaje.s2t">Apósito estéril:</strong> 10 cm × 18 cm</li>
+                        <li><strong data-i18n="prod.vendaje.s3t">Longitud de la venda:</strong> <span
+                                data-i18n="prod.vendaje.s3">aproximadamente 3,68 metros estirada.</span></li>
+                        <li><strong data-i18n="prod.vendaje.s4t">Empaque:</strong> <span
+                                data-i18n="prod.vendaje.s4">doble sellado al vacío, estéril, impermeable y de perfil
+                                ultrabajo.</span></li>
+                    </ul>
+                    <button type="button" class="btn-whatsapp btn-buy w-100 mt-2"
+                        data-name="Vendaje Israelí Safeguard 4&quot; (FCP-01)" data-price="$22.000 ARS">
+                        <svg class="icon-brand" aria-hidden="true">
+                            <use href="#i-wa" />
+                        </svg>
+                        <span data-i18n="store.buy">Comprar</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Gasa Comprimida NAR -->
+            <div class="pd" data-pd="gasa" hidden>
+                <div class="pd-gallery">
+                    <img class="pd-main" src="images/productos/gasa-nar.jpg" alt="Gasa comprimida NAR">
+                    <div class="pd-thumbs">
+                        <button type="button" class="pd-thumb is-active"><img src="images/productos/gasa-nar.jpg"
+                                alt="Gasa comprimida NAR en su empaque"></button>
+                        <button type="button" class="pd-thumb"><img src="images/productos/gasa-nar-2.jpg"
+                                alt="Gasa comprimida NAR en ángulo"></button>
+                    </div>
+                </div>
+                <div class="pd-info">
+                    <h2>Gasa Comprimida NAR</h2>
+                    <div class="store-price"><span class="price-amount">$14.500</span><span
+                            class="price-currency">ARS</span></div>
+                    <p data-i18n="prod.gasa.d1">La NAR Compressed Gauze (gasa comprimida de North American Rescue) es un
+                        rollo ultracompacto de gasa estéril de algodón diseñada específicamente para el empaquetamiento
+                        de heridas profundas y el control de hemorragias graves en entornos tácticos y
+                        prehospitalarios.</p>
+                    <h3 data-i18n="store.specs">Especificaciones</h3>
+                    <ul class="pd-list pd-list--plain">
+                        <li><strong data-i18n="prod.gasa.s1t">Dimensiones desplegada:</strong> <span
+                                data-i18n="prod.gasa.s1">11,4 cm de ancho × 3,75 metros de largo.</span></li>
+                        <li><strong data-i18n="prod.gasa.s2t">Paquete cerrado:</strong> 7,6 × 5 × 2,5 cm</li>
+                        <li><strong data-i18n="prod.spec.weight">Peso:</strong> 34 g</li>
+                    </ul>
+                    <button type="button" class="btn-whatsapp btn-buy w-100 mt-2" data-name="Gasa Comprimida NAR"
+                        data-price="$14.500 ARS">
+                        <svg class="icon-brand" aria-hidden="true">
+                            <use href="#i-wa" />
+                        </svg>
+                        <span data-i18n="store.buy">Comprar</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </dialog>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-baires">Baires</span><span class="logo-tac">Tac</span>
+                </a>
+                <p class="mt-1 text-small" data-i18n="footer.tagline">Soluciones integrales para la atención de
+                    emergencias, medicina táctica y control de hemorragias en el Cono Sur.</p>
+            </div>
+            <div class="footer-links">
+                <span data-i18n="footer.rights">&copy; 2026 BairesTac. Todos los derechos reservados.</span><br>
+                <a href="mailto:bairestacsrl@gmail.com">bairestacsrl@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5491132967109" class="whatsapp-float" target="_blank" rel="noopener"
+        data-i18n-aria-label="a11y.whatsapp" aria-label="Escribinos por WhatsApp">
+        <svg aria-hidden="true" focusable="false">
+            <use href="#i-wa" />
+        </svg>
+    </a>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+    <script src="productos.js"></script>
+</body>
+
+</html>
